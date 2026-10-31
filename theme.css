@@ -244,3 +244,124 @@ html[data-theme="dark"] body.page-poetry .poem-nav-link:hover {
 html[data-theme="dark"] body.page-poetry .poem-nav-link small { color:#f2d783; }
 html[data-theme="dark"] body.page-poetry .poem-nav-link strong { color:#f7efe0; }
 html[data-theme="dark"] body.page-poetry .ending h2 { color:#f6edda; }
+
+
+/* PERMANENT DARK SITE, LIGHT POEM READER
+   The poetry archive keeps the deep Van Gogh blues.
+   Only an opened individual poem switches to an airy paper reading surface.
+   Specificity intentionally exceeds the archive's dark-theme rules above. */
+html[data-theme="dark"] body.page-poetry.reading-mode {
+  color-scheme: light;
+  --text: #263b4d;
+  --muted: #4f6473;
+  --line: #dce7f0;
+  --accent: #3f6f96;
+  --accent-deep: #315f83;
+  background: #fbfdff;
+  color: #263b4d;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .bg,
+html[data-theme="dark"] body.page-poetry.reading-mode .swirl,
+html[data-theme="dark"] body.page-poetry.reading-mode .stars {
+  display: none;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode header,
+html[data-theme="dark"] body.page-poetry.reading-mode .running,
+html[data-theme="dark"] body.page-poetry.reading-mode footer {
+  background: #fbfdff;
+  border-color: #dce7f0;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .brand,
+html[data-theme="dark"] body.page-poetry.reading-mode .navlinks a {
+  color: #263b4d;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .brand span,
+html[data-theme="dark"] body.page-poetry.reading-mode .navlinks .selected,
+html[data-theme="dark"] body.page-poetry.reading-mode .navlinks a:hover {
+  color: #396d93;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .navlinks .selected {
+  border-color: #739fc0;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .running,
+html[data-theme="dark"] body.page-poetry.reading-mode .footer-inner p,
+html[data-theme="dark"] body.page-poetry.reading-mode .footer-inner a {
+  color: #607789;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .reader {
+  background: #fbfdff;
+  color: #263b4d;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .reader h1 {
+  color: #23384b;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .reader-date {
+  color: #3d6f97;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .back,
+html[data-theme="dark"] body.page-poetry.reading-mode .actions a {
+  color: #305f86;
+  border-color: #7ca7c9;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .back:hover,
+html[data-theme="dark"] body.page-poetry.reading-mode .actions a:hover {
+  color: #183e5e;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .line,
+html[data-theme="dark"] body.page-poetry.reading-mode .actions,
+html[data-theme="dark"] body.page-poetry.reading-mode .poem-navigation {
+  border-color: #d6e4ef;
+  background: transparent;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .line {
+  background: #d6e4ef;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .body {
+  color: #30465a;
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 2.08;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .body p {
+  color: #30465a;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .art {
+  background: #ffffff;
+  border: 1px solid #d6e4ef;
+  box-shadow: 0 16px 38px rgba(56, 87, 121, .08);
+  padding: clamp(15px, 3vw, 26px);
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .art img {
+  background: #ffffff;
+  max-height: 610px;
+  object-fit: contain;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .art figcaption {
+  color: #617484;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .poem-nav-link {
+  background: #edf5fc;
+  border: 1px solid #cfdfeb;
+  color: #2a4963;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .poem-nav-link:hover {
+  background: #e3f0fa;
+  border-color: #91b4cf;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .poem-nav-link small {
+  color: #426f93;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .poem-nav-link strong {
+  color: #2b4256;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .ending {
+  background: #f2f7fc;
+  border-top: 1px solid #dce7f0;
+  padding-top: 66px;
+  margin-top: 8px;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .ending h2 {
+  color: #334c60;
+}
+html[data-theme="dark"] body.page-poetry.reading-mode .ending .micro {
+  color: #416e91;
+}
