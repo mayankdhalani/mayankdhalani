@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1429">
-  <meta name="description" content="Mayank Dhalani — medicine, poetry, art, and thoughts in the in-between.">
-  <title>Mayank Dhalani — Notes Under a Quiet Sky</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f8f3ea">
+  <meta name="description" content="Mayank Dhalani | medicine, poetry, art, and thoughts in the in-between.">
+  <title>Mayank Dhalani | Notes Under a Quiet Sky</title>
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <style>
@@ -23,17 +23,73 @@
     footer{border-top:1px solid var(--line);padding:24px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner p,.footer-inner a{margin:0;text-decoration:none;color:#adb7c2;font:500 11px/1.6 var(--sans)}
     @media(max-width:860px){.container{width:min(100% - 54px,720px)}.hero{grid-template-columns:1fr;gap:28px;padding-top:74px}.hero-art{height:350px}.section-head,.essay-box{grid-template-columns:1fr;gap:22px}.cards{grid-template-columns:1fr}.essay-note{justify-self:start}.signoff{padding-bottom:60px}}
     @media(max-width:620px){.container{width:calc(100% - 38px)}.nav{min-height:74px}.brand{font-size:21px}.navlinks{gap:14px}.navlinks a{font-size:11px}.hero h1{font-size:clamp(50px,12vw,68px)}.note-card{left:2%;width:92%}.hero-art{height:330px}.about{padding:72px 0}.essay-box{padding:28px}.signoff{flex-wrap:wrap}.star{font-size:48px}}
+
+    /* Warm parchment and amber. The sky remains a subtle motif, not the whole room. */
+    :root {
+      color-scheme: light;
+      --night: #f8f3ea; --night2: #eee3d2;
+      --panel: #fff9ee; --panel2: #f5ece0;
+      --gold: #a36d47; --mist: #596960;
+      --ink: #293c35; --line: #d9cbb9;
+    }
+    body { background: #f8f3ea; color: var(--ink); }
+    .sky {
+      background:
+        radial-gradient(ellipse at 80% 17%, rgba(233,188,126,.35), transparent 32%),
+        radial-gradient(ellipse at 20% 73%, rgba(176,207,189,.27), transparent 39%),
+        linear-gradient(145deg,#faf6ee 0%,#f6eee2 70%,#f5eee6 100%);
+    }
+    .sky::before,.sky::after { opacity: .11; filter: invert(1) sepia(.2); }
+    header,footer,.divider { border-color: var(--line); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brandmark { width: 36px; height: 36px; border-radius: 9px; flex: none; }
+    .navlinks a { color: var(--ink); }
+    .navlinks .pill { color: #8d543a; border-color: #cfb69e; background: #fff8ef; }
+    .eyebrow,.section-head .micro,.micro[style],.signoff .micro,
+    .essay-box .micro[style] { color: var(--gold) !important; }
+    .hero p,.section-head p,.essay-box p { color: #526259; }
+    .moon { background: #efcf9d; box-shadow: 0 0 80px rgba(207,157,95,.24),0 0 180px rgba(207,157,95,.13); }
+    .moon::after { background: #dfb98b; }
+    .constellation { opacity: .42; }
+    .note-card {
+      background: linear-gradient(145deg,rgba(255,251,243,.97),rgba(246,232,213,.96));
+      border: 1px solid #d9c3a4;
+      box-shadow: 0 18px 38px rgba(111,82,52,.13);
+    }
+    .note-card p { color: #3e4b43; }
+    .divider p { color: #6b6156; }
+    .divider span { color: #a36d47; }
+    .button { background: #a36d47; color: #fff9f1; border-color: #a36d47; }
+    .button:hover { background: #895738; color: white; }
+    .textlink { color: #8c583e; }
+    .cards .card {
+      background: linear-gradient(153deg,#fffaf3,#f3e9db);
+      border: 1px solid #dfcfbc;
+      box-shadow: 0 8px 24px rgba(105,76,50,.045);
+    }
+    .cards .card:nth-child(2) { background: linear-gradient(153deg,#fbf8f0,#e7eee6); }
+    .cards .card:nth-child(3) { background: linear-gradient(153deg,#fff7ec,#f3e7db); }
+    .cards .card p { color: #546359; }
+    .essay-box {
+      background: linear-gradient(125deg,#f3e7d5,#fbf8f0 70%);
+      border: 1px solid #dbc7ae;
+    }
+    .essay-box .status { color: #8f533b; border-color: #cba480; }
+    .essay-note { background: rgba(255,252,247,.78); border-color: #dbc9b2; }
+    .essay-note p { color: #5d5a4e; }
+    .footer-inner p,.footer-inner a { color: #657168; }
+    @media(max-width:620px) { .brandmark { width: 30px; height: 30px; } }
   </style>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
-  <header><nav class="container nav"><a class="brand" href="./">Mayank Dhalani<span>.</span></a><div class="navlinks"><a href="#about">About</a><a href="#essays">Essays</a><a class="pill" href="poetry/">Poetry ↗</a></div></nav></header>
+  <header><nav class="container nav"><a class="brand" href="./"><img class="brandmark" src="favicon.svg?v=2" width="36" height="36" alt="">Mayank Dhalani<span>.</span></a><div class="navlinks"><a href="#about">About</a><a href="#essays">Essays</a><a class="pill" href="poetry/">Poetry ↗</a></div></nav></header>
   <main>
     <section class="hero container">
       <div>
         <div class="eyebrow micro">Medicine · Poetry · Art</div>
         <h1>Notes under<br>a <em>quiet sky.</em></h1>
-        <p>Hello, I’m Mayank — a physician and researcher at Mayo Clinic in Florida, someone drawn to poetry, and someone who keeps returning to art, books, and the small questions that make a life feel more fully lived.</p>
+        <p>Hello, I’m Mayank, a physician and researcher at Mayo Clinic in Florida, someone drawn to poetry, and someone who keeps returning to art, books, and the small questions that make a life feel more fully lived.</p>
         <div class="actions"><a class="button" href="poetry/">Enter the poetry room ↗</a><a class="textlink" href="#about">Read a little more ↓</a></div>
       </div>
       <div class="hero-art" aria-hidden="true">
@@ -46,12 +102,12 @@
     <section id="about" class="about container">
       <div class="section-head"><div><div class="micro">Chapter one / About</div><h2>A life made of<br><em>different rooms.</em></h2></div><p>I don’t think medicine, poetry, and art are separate worlds. For me, they’re different ways of noticing, understanding, and staying human.</p></div>
       <div class="cards">
-        <article class="card"><div class="micro" style="color:var(--gold)">01 — The work</div><h3>Medicine & research</h3><p>I’m a physician and researcher. I care about asking better questions, thinking deeply, and doing work that stays close to patients and to meaning.</p></article>
-        <article class="card"><div class="micro" style="color:var(--gold)">02 — The words</div><h3>Poetry & reflection</h3><p>Some thoughts don’t arrive as explanations. They arrive as fragments, images, and feelings — and poetry gives them somewhere to land.</p></article>
-        <article class="card"><div class="micro" style="color:var(--gold)">03 — The elsewhere</div><h3>Art & the everyday</h3><p>Art, music, books, mountain trails, and conversations that run longer than planned — these are some of the ways I keep returning to wonder.</p></article>
+        <article class="card"><div class="micro" style="color:var(--gold)">01 / The work</div><h3>Medicine & research</h3><p>I’m a physician and researcher. I care about asking better questions, thinking deeply, and doing work that stays close to patients and to meaning.</p></article>
+        <article class="card"><div class="micro" style="color:var(--gold)">02 / The words</div><h3>Poetry & reflection</h3><p>Some thoughts don’t arrive as explanations. They arrive as fragments, images, and feelings. Poetry gives them somewhere to land.</p></article>
+        <article class="card"><div class="micro" style="color:var(--gold)">03 / The elsewhere</div><h3>Art & the everyday</h3><p>Art, music, books, mountain trails, and conversations that run longer than planned. These are some of the ways I keep returning to wonder.</p></article>
       </div>
     </section>
-    <section id="essays" class="essays container"><div class="essay-box"><div><div class="micro" style="color:var(--gold)">Chapter two / Notes to come</div><h2>Letters from the<br><em>in-between.</em></h2><p>A little space for future essays and a weekly newsletter — thoughts on books, art, ideas, and the ordinary things worth thinking about.</p><span class="status">Coming soon</span></div><div class="essay-note"><p>Not everything belongs to a poem. Some things want a page of their own.</p></div></div></section>
+    <section id="essays" class="essays container"><div class="essay-box"><div><div class="micro" style="color:var(--gold)">Chapter two / Notes to come</div><h2>Letters from the<br><em>in-between.</em></h2><p>A little space for future essays and a weekly newsletter, featuring thoughts on books, art, ideas, and the ordinary things worth thinking about.</p><span class="status">Coming soon</span></div><div class="essay-note"><p>Not everything belongs to a poem. Some things want a page of their own.</p></div></div></section>
     <section class="container signoff"><div><div class="micro">Until the next page</div><h2>Thank you for stopping by.</h2></div><div class="star" aria-hidden="true">✳</div></section>
   </main>
   <footer><div class="container footer-inner"><p>© <span id="year"></span> Mayank Dhalani</p><a href="poetry/">Open the poetry page ↗</a></div></footer>
