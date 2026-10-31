@@ -84,6 +84,40 @@
     .underlink { font: 700 12px/1.5 var(--sans); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 4px; }
     .underlink:hover { color: var(--wine); }
 
+
+    /* Soft, still autumn silhouettes: purely decorative and intentionally subdued. */
+    .tree-silhouettes {
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      color: #94775d;
+      fill: currentColor;
+      z-index: 0;
+    }
+    .tree-silhouettes .branches {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .tree-silhouettes .crown { opacity: .74; }
+    .hero-trees {
+      width: 123%;
+      height: auto;
+      left: -11%;
+      bottom: 10px;
+      opacity: .19;
+    }
+    .signoff { position: relative; isolation: isolate; }
+    .signoff > :not(.tree-silhouettes) { position: relative; z-index: 1; }
+    .signoff-trees {
+      width: 350px;
+      height: auto;
+      right: 34px;
+      bottom: 0;
+      opacity: .13;
+    }
+
     /* The illustration is hand-built HTML + SVG, not a stock photograph */
     .illustration { position: relative; min-height: 580px; display: flex; align-items: center; justify-content: center; }
     .shadow-sheet { position: absolute; width: 83%; height: 83%; background: #d4c7b4; transform: rotate(7deg) translate(8px, 9px); box-shadow: 16px 19px 35px rgba(50, 46, 33, .09); }
@@ -175,6 +209,8 @@
       .illustrated-sheet { width: 82%; max-width: 415px; height: 445px; }
       .shadow-sheet { width: 81%; max-width: 410px; }
       .paper-label { right: 1%; }
+      .hero-trees { width: 115%; left: -7%; opacity: .16; }
+      .signoff-trees { width: 260px; right: -40px; opacity: .09; }
       .interlude-inner { gap: 15px; }
       .about { padding-block: 80px 85px; }
       .section-header { grid-template-columns: 1fr; gap: 23px; margin-bottom: 45px; }
@@ -232,6 +268,19 @@
       </div>
 
       <div class="illustration" aria-hidden="true">
+        <svg class="tree-silhouettes hero-trees" viewBox="0 0 620 350" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <!-- Three quietly branching broadleaf trees, like faded ink on old paper. -->
+          <g class="branches" stroke-width="7">
+            <path d="M102 349 C107 290 108 238 103 168 M105 243 C87 213 65 198 52 183 M104 222 C128 197 142 175 146 143"/>
+            <path d="M311 349 C312 274 316 214 303 138 M309 242 C285 206 266 199 251 181 M310 220 C332 189 347 164 357 136" stroke-width="8"/>
+            <path d="M526 349 C525 293 522 249 528 204 M524 274 C504 248 482 235 467 222 M525 258 C544 233 560 223 579 205" stroke-width="6"/>
+          </g>
+          <g class="crown">
+            <path d="M38 167 C15 155 20 125 41 114 C32 88 62 73 82 81 C94 53 130 56 142 83 C167 77 185 103 173 124 C193 142 180 169 153 174 C142 193 115 189 104 177 C78 194 50 187 38 167 Z"/>
+            <path d="M235 171 C212 153 223 121 244 114 C235 82 268 65 289 77 C296 42 338 37 355 68 C382 61 401 87 391 109 C417 125 408 160 379 165 C365 188 335 190 319 178 C289 198 256 191 235 171 Z"/>
+            <path d="M461 228 C440 212 443 186 461 178 C453 154 478 139 497 147 C512 123 545 128 553 149 C577 142 598 162 588 185 C608 203 592 228 571 229 C562 245 534 243 525 236 C503 253 475 247 461 228 Z"/>
+          </g>
+        </svg>
         <div class="shadow-sheet"></div>
         <div class="illustrated-sheet">
           <div class="sheet-heading"><span>Collected thoughts</span><span>No. 001</span></div>
@@ -321,6 +370,19 @@
     </section>
 
     <section class="signoff container" aria-label="Closing note">
+      <svg class="tree-silhouettes signoff-trees" viewBox="0 0 620 350" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <!-- Three quietly branching broadleaf trees, like faded ink on old paper. -->
+          <g class="branches" stroke-width="7">
+            <path d="M102 349 C107 290 108 238 103 168 M105 243 C87 213 65 198 52 183 M104 222 C128 197 142 175 146 143"/>
+            <path d="M311 349 C312 274 316 214 303 138 M309 242 C285 206 266 199 251 181 M310 220 C332 189 347 164 357 136" stroke-width="8"/>
+            <path d="M526 349 C525 293 522 249 528 204 M524 274 C504 248 482 235 467 222 M525 258 C544 233 560 223 579 205" stroke-width="6"/>
+          </g>
+          <g class="crown">
+            <path d="M38 167 C15 155 20 125 41 114 C32 88 62 73 82 81 C94 53 130 56 142 83 C167 77 185 103 173 124 C193 142 180 169 153 174 C142 193 115 189 104 177 C78 194 50 187 38 167 Z"/>
+            <path d="M235 171 C212 153 223 121 244 114 C235 82 268 65 289 77 C296 42 338 37 355 68 C382 61 401 87 391 109 C417 125 408 160 379 165 C365 188 335 190 319 178 C289 198 256 191 235 171 Z"/>
+            <path d="M461 228 C440 212 443 186 461 178 C453 154 478 139 497 147 C512 123 545 128 553 149 C577 142 598 162 588 185 C608 203 592 228 571 229 C562 245 534 243 525 236 C503 253 475 247 461 228 Z"/>
+          </g>
+        </svg>
       <div>
         <span class="micro" style="color:var(--wine)">Until the next page</span>
         <h2>Thank you for stopping by.</h2>
