@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ed">
+  <meta name="description" content="The personal website of Mayank Dhalani — physician, researcher, and poetry enthusiast.">
+  <title>Mayank Dhalani — Medicine, Words & Wonder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f3ed;
+      --paper-deep: #eee9df;
+      --ink: #26332b;
+      --muted: #657267;
+      --forest: #344f3e;
+      --forest-deep: #253c30;
+      --rust: #b46e50;
+      --line: #d7d7cb;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 16px/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--rust); outline-offset: 5px; }
+    ::selection { background: #e4c7b3; color: var(--ink); }
+    .container { width: min(1160px, calc(100% - 80px)); margin-inline: auto; }
+    .skip-link {
+      position: absolute; left: 12px; top: -60px; z-index: 100;
+      background: white; padding: 8px 14px;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* Navigation */
+    .site-header { border-bottom: 1px solid var(--line); }
+    .nav {
+      min-height: 88px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .wordmark {
+      font: 500 27px/1 var(--serif);
+      text-decoration: none; letter-spacing: -1.1px;
+    }
+    .wordmark span { color: var(--rust); }
+    .nav-links { display: flex; align-items: center; gap: 35px; }
+    .nav-links a {
+      text-decoration: none; font-size: 13px;
+      font-weight: 600; letter-spacing: .025em;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-links .nav-poetry {
+      padding: 11px 17px; border: 1px solid var(--ink);
+      border-radius: 100px;
+    }
+    .nav-links .nav-poetry:hover { color: var(--paper); background: var(--ink); }
+
+    /* Opening */
+    .hero {
+      min-height: 670px;
+      display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+      align-items: center; gap: clamp(45px, 6vw, 95px);
+      padding-block: 90px 100px;
+    }
+    .eyebrow {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--rust);
+    }
+    .hero h1 {
+      margin: 25px 0 27px;
+      font: 400 clamp(53px, 6vw, 88px)/1.15 var(--serif);
+      letter-spacing: -.055em;
+      max-width: 750px;
+    }
+    .hero h1 em { font-weight: 400; color: var(--forest); }
+    .hero-description {
+      max-width: 465px; color: #5a655c;
+      font-size: 17px; line-height: 1.9;
+      margin: 0;
+    }
+    .hero-actions {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: 26px; margin-top: 36px;
+    }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 15px; padding: 15px 22px;
+      background: var(--forest); color: white;
+      border: 1px solid var(--forest);
+      text-decoration: none; font-size: 13px; font-weight: 700;
+      border-radius: 2px; transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--forest-deep); }
+    .text-link {
+      text-decoration: none; font-size: 13px; font-weight: 700;
+      border-bottom: 1px solid var(--ink); padding-block: 6px;
+    }
+    .text-link:hover { color: var(--rust); border-color: var(--rust); }
+    .hero-side { position: relative; padding: 15px 18px 20px 0; }
+    .hero-art {
+      min-height: 510px; position: relative; overflow: hidden;
+      background: var(--forest); color: #f4ecdf;
+      isolation: isolate;
+    }
+    .hero-art::before,
+    .hero-art::after {
+      content: ""; position: absolute; border: 1px solid rgba(248,240,221,.30);
+      width: 410px; height: 410px; border-radius: 50%;
+      left: 50%; top: 45%; transform: translate(-50%, -50%);
+    }
+    .hero-art::after {
+      width: 300px; height: 300px;
+      border-color: rgba(248,240,221,.18);
+    }
+    .art-kicker {
+      position: absolute; top: 32px; left: 33px; z-index: 1;
+      text-transform: uppercase; font-size: 10px; letter-spacing: .19em;
+      color: #dcd6c9;
+    }
+    .art-center {
+      position: absolute; top: 43%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; z-index: 1; width: 95%;
+    }
+    .art-center span {
+      display: block; font: italic 400 clamp(49px, 5vw, 67px)/1.22 var(--serif);
+      letter-spacing: -.035em;
+    }
+    .art-center small {
+      display: block; margin-top: 18px; font-size: 10px;
+      letter-spacing: .27em; text-transform: uppercase; color: #e4dac9;
+    }
+    .art-number {
+      position: absolute; bottom: 30px; right: 33px;
+      font-size: 12px; letter-spacing: .1em; color: #ded7c9;
+    }
+    .art-note {
+      position: absolute; right: -5px; bottom: 0; z-index: 2;
+      width: 235px; background: #e9d6bc; color: var(--ink);
+      padding: 23px 26px;
+      transform: rotate(3deg);
+      box-shadow: 0 14px 25px rgba(38,51,43,.1);
+    }
+    .art-note p {
+      margin: 0; font: italic 400 21px/1.38 var(--serif);
+    }
+    .art-note span {
+      display: block; margin-top: 17px; font-size: 10px;
+      letter-spacing: .13em; text-transform: uppercase;
+    }
+
+    /* About */
+    .about {
+      border-top: 1px solid var(--line);
+      padding-block: 110px 95px;
+      scroll-margin-top: 35px;
+    }
+    .section-heading {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 70px;
+      align-items: start; margin-bottom: 74px;
+    }
+    .section-heading h2 {
+      margin: 18px 0 0;
+      font: 400 clamp(37px, 4.4vw, 58px)/1.24 var(--serif);
+      letter-spacing: -.035em;
+    }
+    .section-heading h2 em { color: var(--forest); font-weight: 400; }
+    .section-heading > p {
+      font-size: 16px; color: var(--muted); line-height: 1.9; margin: 37px 0 0;
+    }
+    .interests {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 40px;
+    }
+    .interest { border-top: 1px solid #9ba99b; padding-top: 22px; }
+    .interest-index {
+      font-size: 11px; font-weight: 700; color: var(--rust);
+      letter-spacing: .1em;
+    }
+    .interest h3 {
+      font: 400 27px/1.3 var(--serif);
+      letter-spacing: -.02em;
+      margin: 30px 0 12px;
+    }
+    .interest p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
+
+    /* Writing invitation */
+    .writing {
+      background: var(--paper-deep);
+      padding-block: 95px 110px; scroll-margin-top: 35px;
+    }
+    .writing-inner {
+      display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
+      gap: 50px; align-items: end;
+    }
+    .writing h2 {
+      margin: 20px 0 21px;
+      font: 400 clamp(40px, 5vw, 68px)/1.2 var(--serif);
+      letter-spacing: -.045em;
+    }
+    .writing h2 em { color: var(--forest); }
+    .writing p { margin: 0; max-width: 550px; color: var(--muted); line-height: 1.9; }
+    .writing-action { display: flex; justify-content: flex-end; padding-bottom: 8px; }
+    .writing-action .button { min-width: 205px; }
+
+    /* Footer */
+    .site-footer { padding-block: 30px; }
+    .footer-inner {
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 20px;
+      color: var(--muted); font-size: 12px;
+    }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { text-decoration: none; }
+    .footer-inner a:hover { color: var(--rust); }
+
+    @media (max-width: 880px) {
+      .hero { min-height: 0; gap: 35px; padding-block: 70px; }
+      .hero-art { min-height: 415px; }
+      .art-note { width: 175px; padding: 16px; }
+      .art-note p { font-size: 17px; }
+      .interests { gap: 25px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 42px, 500px); }
+      .nav { min-height: 76px; }
+      .wordmark { font-size: 25px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 12px; }
+      .nav-links .nav-poetry { padding: 9px 12px; }
+      .hero { grid-template-columns: 1fr; gap: 46px; padding-block: 75px 65px; }
+      .hero h1 { font-size: clamp(52px, 12vw, 70px); }
+      .hero-description { font-size: 16px; }
+      .hero-side { padding: 0 13px 10px 0; }
+      .hero-art { min-height: 390px; }
+      .hero-art::before { width: 340px; height: 340px; }
+      .hero-art::after { width: 250px; height: 250px; }
+      .art-note { right: 0; }
+      .about { padding-block: 75px; }
+      .section-heading { grid-template-columns: 1fr; gap: 10px; margin-bottom: 42px; }
+      .section-heading > p { margin-top: 12px; }
+      .interests { grid-template-columns: 1fr; gap: 35px; }
+      .interest h3 { margin-top: 17px; }
+      .writing { padding-block: 75px; }
+      .writing-inner { grid-template-columns: 1fr; gap: 25px; }
+      .writing-action { justify-content: flex-start; }
+      .footer-inner { flex-wrap: wrap; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="Mayank Dhalani — Home">mayank<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#writing">Writing</a>
+        <!-- Replace this URL with /poetry/ once the new on-site poetry page is ready. -->
+        <a class="nav-poetry" href="https://mayankdhalani.wordpress.com/" target="_blank" rel="noopener noreferrer">Poetry blog ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow">Physician · Researcher · Writer</div>
+        <h1 id="hero-title">A little science.<br><em>A little poetry.</em><br>A lot of curiosity.</h1>
+        <p class="hero-description">
+          Hello, I'm Mayank Dhalani. I spend my days asking questions in medicine,
+          and some of my quieter hours finding words for the things that don't fit into answers.
+          Welcome to my little corner of the internet.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="https://mayankdhalani.wordpress.com/" target="_blank" rel="noopener noreferrer">
+            Explore my poetry <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link" href="#about">Get to know me <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+
+      <div class="hero-side" aria-hidden="true">
+        <div class="hero-art">
+          <div class="art-kicker">Notes from the in-between</div>
+          <div class="art-center">
+            <span>stay<br>curious.</span>
+            <small>an ongoing practice</small>
+          </div>
+          <div class="art-number">01 / ∞</div>
+        </div>
+        <div class="art-note">
+          <p>There is always more to notice.</p>
+          <span>— A small reminder</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about container" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">A few things about me</div>
+          <h2 id="about-title">More than one way<br>to <em>be curious.</em></h2>
+        </div>
+        <p>
+          I like the meeting points between seemingly different worlds.
+          The precision of medicine, the openness of writing, and the
+          small adventures that give both their meaning.
+        </p>
+      </div>
+      <div class="interests">
+        <article class="interest">
+          <span class="interest-index">01 / THE WORK</span>
+          <h3>Medicine &amp; research</h3>
+          <p>I'm a physician currently involved in critical care research at Mayo Clinic in Florida, with a particular interest in sepsis and patient outcomes.</p>
+        </article>
+        <article class="interest">
+          <span class="interest-index">02 / THE WORDS</span>
+          <h3>Poetry &amp; stories</h3>
+          <p>I write to hold on to passing moments, untangle feelings, and notice details that are easy to miss. My poetry blog is where those thoughts live.</p>
+        </article>
+        <article class="interest">
+          <span class="interest-index">03 / THE REST</span>
+          <h3>Life in between</h3>
+          <p>Books, mountain trails, music, meaningful conversations, and all the things that remind me there is a world outside the usual routine.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="writing" id="writing" aria-labelledby="writing-title">
+      <div class="writing-inner container">
+        <div>
+          <div class="eyebrow">The poetry blog</div>
+          <h2 id="writing-title">Some thoughts are<br>better left <em>in verse.</em></h2>
+          <p>A collection of poems and reflections. Eventually, they'll have their own home here; for now, you can read them on my WordPress blog.</p>
+        </div>
+        <div class="writing-action">
+          <a class="button" href="https://mayankdhalani.wordpress.com/" target="_blank" rel="noopener noreferrer">
+            Visit the poetry blog <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <p>© <span id="year">2026</span> Mayank Dhalani. Made with curiosity.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
