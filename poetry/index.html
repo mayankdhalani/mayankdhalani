@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f2f8fc">
   <meta name="description" content="Thoughts in the Starry Night | Poetry by Mayank Dhalani.">
   <title>Thoughts in the Starry Night | Mayank Dhalani</title>
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.svg?v=3" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -27,11 +27,23 @@
     [hidden]{display:none!important}
     @media(max-width:850px){.container{width:min(100% - 54px,720px)}.hero{grid-template-columns:1fr;gap:28px;padding-top:74px}.scene{height:330px}.section-head{grid-template-columns:1fr;gap:22px}.running .container span:last-child{display:none}}
     @media(max-width:620px){.container{width:calc(100% - 38px)}.nav{min-height:74px}.brand{font-size:21px}.brand img{width:30px;height:30px}.navlinks{gap:14px}.navlinks a{font-size:11px}.hero h1{font-size:clamp(50px,12vw,74px)}.hero p{font-size:15px}.scene{height:300px}.moon{width:132px;height:132px}.archive{padding:72px 0 82px}.toolbar{flex-wrap:wrap}.item{grid-template-columns:48px 1fr;gap:14px}.read{grid-column:2;justify-self:start}.poem-navigation{gap:10px}.poem-nav-link{min-height:107px;padding:13px}.poem-nav-link strong{font-size:17px}.ending{flex-wrap:wrap}}
+
+    /* Individual poem pages use clean white paper so photographs and art stand out. */
+    body.reading-mode { background:#fcfeff; }
+    body.reading-mode .bg,
+    body.reading-mode .swirl,
+    body.reading-mode .stars { display:none; }
+    body.reading-mode header,
+    body.reading-mode footer,
+    body.reading-mode .running,
+    body.reading-mode .reader { background:#fcfeff; }
+    body.reading-mode .art { background:#ffffff; border-color:#dce8f1; }
+    body.reading-mode .art img { background:#ffffff; }
   </style>
 </head>
 <body>
   <div class="bg" aria-hidden="true"></div><div class="swirl" aria-hidden="true"></div><div class="stars" aria-hidden="true"></div>
-  <header><nav class="container nav"><a class="brand" href="../"><img src="../favicon.svg" alt=""><span>Mayank</span> Dhalani</a><div class="navlinks"><a href="../">← Home</a><a href="./" class="selected">Poetry</a><a href="https://mayankdhalani.wordpress.com/" target="_blank" rel="noopener noreferrer">WordPress ↗</a></div></nav></header>
+  <header><nav class="container nav"><a class="brand" href="../"><img src="../favicon.svg?v=3" alt=""><span>Mayank</span> Dhalani</a><div class="navlinks"><a href="../">← Home</a><a href="./" class="selected">Poetry</a><a href="https://mayankdhalani.wordpress.com/" target="_blank" rel="noopener noreferrer">WordPress ↗</a></div></nav></header>
   <div class="running"><div class="container micro"><span>Thoughts in the Starry Night</span><span>A little universe of poems</span></div></div>
   <main>
     <div id="archivePage">
@@ -85,7 +97,7 @@
       return blocks.map(b=>'<p>'+b.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</p>').join('');
     }
 
-    function showReader(post){
+    function showReader(post){document.body.classList.add('reading-mode');
       const idx=posts.findIndex(p=>p.slug===post.slug);
       const prev=idx>0 ? posts[idx-1] : null;
       const next=idx<posts.length-1 ? posts[idx+1] : null;
@@ -121,7 +133,7 @@
       window.scrollTo(0,0);
     }
 
-    function showArchive(){
+    function showArchive(){document.body.classList.remove('reading-mode');
       document.getElementById('archivePage').hidden=false;
       document.getElementById('reader').hidden=true;
       document.title=baseTitle;
