@@ -1,468 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f3eb">
-  <meta name="description" content="Mayank Dhalani's corner of the internet — notes on medicine, poetry, and a life spent paying attention.">
-  <meta property="og:title" content="Mayank Dhalani — Between the known and the felt">
-  <meta property="og:description" content="Medicine, words, and all the things in between.">
-  <meta property="og:type" content="website">
-  <title>Mayank Dhalani — Between the Known and the Felt</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1429">
+  <meta name="description" content="Mayank Dhalani — medicine, poetry, art, and thoughts in the in-between.">
+  <title>Mayank Dhalani — Notes Under a Quiet Sky</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --page: #f7f3eb;
-      --cream: #f2eadb;
-      --sheet: #fcf9f3;
-      --ink: #21372e;
-      --quiet: #626d62;
-      --line: #d6d2c7;
-      --wine: #a35f49;
-      --gold: #c4a36a;
-      --forest: #284638;
-      --forest2: #1b3229;
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", system-ui, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--page);
-      color: var(--ink);
-      font: 400 15px/1.8 var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-    ::selection { background: #e2c7a8; color: var(--ink); }
-    a { color: inherit; }
-    a:focus-visible { outline: 3px solid var(--wine); outline-offset: 4px; }
-    .container { width: min(1200px, calc(100% - 104px)); margin-inline: auto; }
-    .skip { position: absolute; top: -80px; left: 16px; background: white; padding: 8px 15px; z-index: 100; }
-    .skip:focus { top: 16px; }
-    .micro { font: 700 10px/1.5 var(--sans); letter-spacing: .23em; text-transform: uppercase; }
-
-    /* The top of the notebook */
-    .masthead { border-bottom: 1px solid var(--line); position: relative; z-index: 3; }
-    .masthead-inner { display: flex; justify-content: space-between; align-items: center; min-height: 90px; gap: 20px; }
-    .brand { font: 500 27px/1.15 var(--serif); letter-spacing: -.05em; text-decoration: none; white-space: nowrap; }
-    .brand .punct { color: var(--wine); }
-    .navigation { display: flex; align-items: center; gap: 37px; }
-    .navigation a { text-decoration: none; font: 600 12px/1.5 var(--sans); letter-spacing: .015em; }
-    .navigation a:not(.nav-pill):hover { color: var(--wine); }
-    .nav-pill { border: 1px solid var(--ink); padding: 11px 17px; transition: background .2s, color .2s; }
-    .nav-pill:hover { color: white; background: var(--ink); }
-    .masthead-caption { padding: 13px 0; border-bottom: 1px solid var(--line); color: #778077; }
-    .masthead-caption .container { display: flex; justify-content: space-between; gap: 18px; }
-    .masthead-caption p { margin: 0; font: 600 10px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
-
-    /* The introduction */
-    .hero { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 55px; align-items: center; padding-top: 94px; padding-bottom: 115px; }
-    .hero-copy { padding: 30px 0; }
-    .kicker { display: inline-flex; align-items: center; gap: 14px; color: var(--wine); }
-    .kicker::before { content: ""; width: 31px; height: 1px; background: currentColor; }
-    .hero h1 {
-      margin: 28px 0 29px;
-      font: 400 clamp(55px, 5.7vw, 90px)/1.13 var(--serif);
-      letter-spacing: -.062em; 
-    }
-    .hero h1 em { font-weight: 400; color: var(--wine); }
-    .hero h1 span { display: block; }
-    .hero-lede { max-width: 520px; color: #58645a; font-size: 16px; line-height: 2; margin: 0; }
-    .hero-lede strong { color: var(--ink); font-weight: 600; }
-    .hero-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 37px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: space-between; gap: 25px;
-      padding: 15px 21px; background: var(--forest); color: #fff;
-      border: 1px solid var(--forest); text-decoration: none;
-      font: 700 12px/1.5 var(--sans); letter-spacing: .035em;
-      transition: background .2s, transform .2s;
-    }
-    .btn:hover { background: var(--forest2); transform: translateY(-2px); }
-    .underlink { font: 700 12px/1.5 var(--sans); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 4px; }
-    .underlink:hover { color: var(--wine); }
-
-
-    /* Soft, still autumn silhouettes: purely decorative and intentionally subdued. */
-    .tree-silhouettes {
-      position: absolute;
-      pointer-events: none;
-      user-select: none;
-      color: #94775d;
-      fill: currentColor;
-      z-index: 0;
-    }
-    .tree-silhouettes .branches {
-      fill: none;
-      stroke: currentColor;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .tree-silhouettes .crown { opacity: .74; }
-    .hero-trees {
-      width: 123%;
-      height: auto;
-      left: -11%;
-      bottom: 10px;
-      opacity: .19;
-    }
-    .signoff { position: relative; isolation: isolate; }
-    .signoff > :not(.tree-silhouettes) { position: relative; z-index: 1; }
-    .signoff-trees {
-      width: 350px;
-      height: auto;
-      right: 34px;
-      bottom: 0;
-      opacity: .13;
-    }
-
-    /* The illustration is hand-built HTML + SVG, not a stock photograph */
-    .illustration { position: relative; min-height: 580px; display: flex; align-items: center; justify-content: center; }
-    .shadow-sheet { position: absolute; width: 83%; height: 83%; background: #d4c7b4; transform: rotate(7deg) translate(8px, 9px); box-shadow: 16px 19px 35px rgba(50, 46, 33, .09); }
-    .illustrated-sheet {
-      position: relative; z-index: 1; width: 85%; height: 530px;
-      background: var(--forest); color: #f6f0e5;
-      transform: rotate(-3.5deg); overflow: hidden;
-      border: 1px solid rgba(255,255,255,.15);
-      box-shadow: 0 22px 48px rgba(39, 48, 35, .18);
-      display: flex; flex-direction: column; align-items: center; justify-content: space-between;
-      padding: 34px 31px 31px;
-    }
-    .illustrated-sheet::before {
-      content: ""; position: absolute; inset: 20px; border: 1px solid rgba(244, 234, 207, .22); pointer-events: none;
-    }
-    .illustrated-sheet > * { position: relative; z-index: 1; }
-    .sheet-heading { align-self: stretch; display: flex; align-items: center; justify-content: space-between; font: 600 10px/1.5 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #d5d1c5; }
-    .botanical { width: min(85%, 330px); height: 285px; overflow: visible; }
-    .botanical path, .botanical ellipse, .botanical circle { stroke: #e8ddc7; stroke-width: 1.35; fill: none; vector-effect: non-scaling-stroke; }
-    .botanical .sun { fill: #d6b985; stroke: none; opacity: .93; }
-    .botanical .glow { stroke: rgba(233, 221, 190, .33); }
-    .sheet-bottom { font: italic 400 clamp(24px, 2.5vw, 33px)/1.24 var(--serif); letter-spacing: -.035em; text-align: center; }
-    .sheet-bottom small { display: block; font: 600 9px/1.5 var(--sans); letter-spacing: .21em; text-transform: uppercase; color: #dac8a7; margin-top: 16px; }
-    .paper-label { position: absolute; right: -1%; bottom: 33px; z-index: 2; width: 201px; padding: 17px 21px; background: #e6d4b7; color: var(--ink); box-shadow: 5px 9px 20px rgba(24,34,26,.14); transform: rotate(5deg); }
-    .paper-label span { display: block; font: italic 400 18px/1.4 var(--serif); }
-    .paper-label small { display: block; margin-top: 10px; font: 700 8px/1.5 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
-
-    /* A running line in the book */
-    .interlude { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .interlude-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 33px; padding-block: 24px; }
-    .interlude .star { font: 400 24px/1 var(--serif); color: var(--wine); }
-    .interlude p { margin: 0; font: italic 400 clamp(18px, 2.1vw, 24px)/1.5 var(--serif); text-align: center; }
-
-    /* About */
-    .about { padding-block: 117px 125px; scroll-margin-top: 40px; }
-    .section-header { display: grid; grid-template-columns: 1fr .85fr; gap: 70px; align-items: end; margin-bottom: 73px; }
-    .section-heading { margin: 15px 0 0; font: 400 clamp(42px, 4.65vw, 69px)/1.2 var(--serif); letter-spacing: -.05em; }
-    .section-heading em { color: var(--wine); }
-    .section-intro { color: var(--quiet); line-height: 2; margin: 0 0 5px; max-width: 475px; font-size: 15px; }
-    .chapters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
-    .chapter { border-top: 1px solid #a8aa9e; padding-top: 21px; }
-    .chapter-no { color: var(--wine); }
-    .chapter h3 { margin: 33px 0 12px; font: 400 clamp(24px, 2.3vw, 32px)/1.3 var(--serif); letter-spacing: -.035em; }
-    .chapter p { margin: 0; color: var(--quiet); font-size: 13px; line-height: 2; }
-
-    /* Poetry room */
-    .poetry { background: var(--forest2); color: #f2ecdf; padding-block: 100px 112px; position: relative; overflow: hidden; scroll-margin-top: 35px; }
-    .poetry::before { content: ""; position: absolute; width: 700px; height: 700px; border: 1px solid rgba(244, 235, 213,.12); border-radius: 50%; right: -260px; top: -370px; box-shadow: 0 0 0 95px rgba(244,235,213,.025), 0 0 0 192px rgba(244,235,213,.016); pointer-events: none; }
-    .poetry-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: 90px; align-items: center; position: relative; }
-    .poetry .micro { color: #dfbc8a; }
-    .poetry h2 { font: 400 clamp(50px, 5.2vw, 78px)/1.17 var(--serif); letter-spacing: -.055em; margin: 24px 0 25px; }
-    .poetry h2 em { color: #dabb8b; }
-    .poetry-copy p { max-width: 545px; color: #d4d7c9; font-size: 15px; line-height: 1.95; margin: 0 0 28px; }
-    .poetry .btn { color: var(--forest2); background: #e5caa1; border-color: #e5caa1; }
-    .poetry .btn:hover { background: #f3ddba; }
-    .poetry-note { min-height: 280px; border-left: 1px solid rgba(244,236,220,.24); padding: 30px 0 20px 47px; display: flex; flex-direction: column; justify-content: center; }
-    .poetry-note .quote-mark { color: #cfad78; font: 400 85px/1 var(--serif); height: 64px; }
-    .poetry-note p { font: italic 400 clamp(24px, 2.6vw, 37px)/1.55 var(--serif); letter-spacing: -.03em; margin: 0; color: #f2e8d7; }
-    .poetry-note .note-end { display: block; margin-top: 22px; color: #cfc8b5; }
-
-    /* A quiet announcement, styled as a page from a letter rather than a signup form. */
-    .essays {
-      background: var(--cream);
-      padding-block: 100px 110px;
-      scroll-margin-top: 35px;
-      border-bottom: 1px solid var(--line);
-    }
-    .essays-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
-      align-items: center;
-      gap: clamp(50px, 8vw, 125px);
-    }
-    .essays .micro { color: var(--wine); }
-    .essays h2 {
-      margin: 18px 0 20px;
-      font: 400 clamp(43px, 4.8vw, 69px)/1.2 var(--serif);
-      letter-spacing: -.05em;
-    }
-    .essays h2 em { color: var(--wine); }
-    .essays-description { max-width: 510px; color: var(--quiet); margin: 0; font-size: 15px; line-height: 2; }
-    .essay-status {
-      display: inline-block; margin-top: 26px; padding: 9px 13px;
-      border: 1px solid rgba(163,95,73,.55);
-      color: var(--wine);
-      font: 700 10px/1.4 var(--sans);
-      text-transform: uppercase; letter-spacing: .19em;
-    }
-    .letter-sheet {
-      position: relative; background: var(--sheet);
-      min-height: 260px; padding: 41px 42px 34px;
-      box-shadow: 12px 15px 0 #e5dccd, 16px 20px 24px rgba(41,43,33,.075);
-      transform: rotate(2deg);
-      border: 1px solid #e5ded1;
-    }
-    .letter-sheet::before {
-      content: ""; position: absolute; top: 0; right: 0;
-      width: 58px; height: 58px; 
-      background: linear-gradient(225deg, var(--cream) 50%, #e8dfd0 50%);
-      border-left: 1px solid #e5ded1; border-bottom: 1px solid #e5ded1;
-    }
-    .letter-sheet .letter-no { font-size: 10px; letter-spacing: .17em; color: var(--wine); }
-    .letter-sheet .letter-title { margin: 29px 0 15px; font: italic 400 clamp(26px, 2.7vw, 36px)/1.32 var(--serif); letter-spacing: -.03em; }
-    .letter-sheet .letter-rule { height: 1px; width: 55px; background: var(--gold); margin-bottom: 20px; }
-    .letter-sheet .letter-foot { font-size: 11px; color: var(--quiet); margin: 0; letter-spacing: .035em; }
-
-    /* Last page */
-    .signoff { display: flex; justify-content: space-between; gap: 45px; align-items: end; padding-block: 77px 72px; }
-    .signoff h2 { margin: 17px 0 0; font: italic 400 clamp(29px, 3.3vw, 43px)/1.4 var(--serif); letter-spacing: -.035em; }
-    .signoff .endmark { font: 400 66px/1 var(--serif); color: var(--wine); }
-    .footer { border-top: 1px solid var(--line); padding-block: 28px; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .footer p, .footer a { margin: 0; font: 500 11px/1.6 var(--sans); color: #6b766d; text-decoration: none; }
-    .footer a:hover { color: var(--wine); }
-    @media (max-width: 1050px) {
-      .container { width: min(100% - 70px, 1150px); }
-      .hero { gap: 20px; }
-      .illustration { min-height: 500px; }
-      .illustrated-sheet { height: 455px; }
-      .paper-label { bottom: 12px; }
-    }
-    @media (max-width: 780px) {
-      .container { width: min(100% - 42px, 600px); }
-      .masthead-inner { min-height: 75px; }
-      .brand { font-size: 23px; }
-      .navigation { gap: 16px; }
-      .navigation a { font-size: 11px; }
-      .navigation .nav-pill { padding: 9px 12px; }
-      .masthead-caption p:last-child { display: none; }
-      .hero { grid-template-columns: 1fr; padding-block: 66px 82px; gap: 33px; }
-      .hero-copy { padding: 0; }
-      .hero h1 { font-size: clamp(53px, 11vw, 74px); }
-      .hero-lede { font-size: 15px; }
-      .illustration { min-height: 490px; }
-      .illustrated-sheet { width: 82%; max-width: 415px; height: 445px; }
-      .shadow-sheet { width: 81%; max-width: 410px; }
-      .paper-label { right: 1%; }
-      .hero-trees { width: 115%; left: -7%; opacity: .16; }
-      .signoff-trees { width: 260px; right: -40px; opacity: .09; }
-      .interlude-inner { gap: 15px; }
-      .about { padding-block: 80px 85px; }
-      .section-header { grid-template-columns: 1fr; gap: 23px; margin-bottom: 45px; }
-      .chapters { grid-template-columns: 1fr; gap: 35px; }
-      .chapter h3 { margin-top: 18px; }
-      .poetry { padding-block: 80px; }
-      .poetry-inner { grid-template-columns: 1fr; gap: 36px; }
-      .poetry-note { min-height: 0; border-left: none; border-top: 1px solid rgba(244,236,220,.24); padding: 25px 0 0; }
-      .poetry-note p { max-width: 420px; }
-      .essays { padding-block: 75px 83px; }
-      .essays-inner { grid-template-columns: 1fr; gap: 36px; }
-      .letter-sheet { max-width: 440px; min-height: 230px; padding: 32px; }
-      .signoff { padding-block: 58px; }
-    }
-    @media (max-width: 390px) {
-      .brand { font-size: 21px; }
-      .navigation { gap: 10px; }
-      .navigation a { font-size: 10px; }
-      .illustration { min-height: 425px; }
-      .illustrated-sheet { height: 400px; }
-      .paper-label { width: 170px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .btn, .nav-pill { transition: none; }
-    }
+    :root{color-scheme:dark;--night:#0b1429;--night2:#12203b;--panel:#17253d;--panel2:#0f1c31;--gold:#d9b985;--mist:#d2d7de;--ink:#f6f0e5;--line:#e7dccc25;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--night);color:var(--ink);font:400 15px/1.8 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}.container{width:min(1120px,calc(100% - 88px));margin-inline:auto}.micro{font:600 10px/1.6 var(--sans);letter-spacing:.22em;text-transform:uppercase}
+    .sky{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 80% 15%,#243861,transparent 28%),radial-gradient(circle at 18% 68%,#142742,transparent 35%),linear-gradient(165deg,#081021,#101d34 68%,#152540 100%)}
+    .sky:before,.sky:after{content:"";position:absolute;inset:0;background-image:radial-gradient(1px 1px at 8% 18%,#fff 95%,transparent),radial-gradient(1.6px 1.6px at 17% 56%,#fff 95%,transparent),radial-gradient(1px 1px at 26% 12%,#fff 95%,transparent),radial-gradient(1px 1px at 43% 62%,#fff 95%,transparent),radial-gradient(1.4px 1.4px at 56% 16%,#fff 95%,transparent),radial-gradient(1px 1px at 68% 43%,#fff 95%,transparent),radial-gradient(2px 2px at 79% 20%,#fff 95%,transparent),radial-gradient(1px 1px at 92% 28%,#fff 95%,transparent),radial-gradient(1.3px 1.3px at 88% 73%,#fff 95%,transparent),radial-gradient(1px 1px at 73% 81%,#fff 95%,transparent),radial-gradient(1.6px 1.6px at 54% 88%,#fff 95%,transparent);opacity:.48}.sky:after{opacity:.22;transform:scale(1.2) rotate(15deg)}
+    header{border-bottom:1px solid var(--line)}.nav{min-height:88px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{text-decoration:none;font:400 26px/1.25 var(--serif);letter-spacing:-.05em}.brand span{color:var(--gold)}.navlinks{display:flex;gap:30px;align-items:center}.navlinks a{text-decoration:none;font:600 12px/1.5 var(--sans)}.navlinks a:hover,.pill:hover{color:var(--gold)}.pill{padding:10px 16px;border:1px solid #d9b98555}
+    .hero{padding:96px 0 88px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:42px}.eyebrow{display:flex;align-items:center;gap:15px;color:var(--gold)}.eyebrow:before{content:"";width:30px;height:1px;background:currentColor}.hero h1{font:400 clamp(54px,6vw,88px)/1.16 var(--serif);letter-spacing:-.055em;margin:26px 0 24px}.hero h1 em{color:var(--gold);font-weight:400}.hero p{max-width:540px;color:var(--mist);font-size:16px;line-height:2;margin:0}.actions{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px}.button{display:inline-flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(217,185,133,.12);border:1px solid #d9b98555;text-decoration:none;font:600 12px/1.5 var(--sans);color:var(--ink)}.button:hover{background:rgba(217,185,133,.18)}.textlink{text-decoration:none;border-bottom:1px solid var(--gold);color:var(--gold);padding-bottom:5px;font:600 12px/1.5 var(--sans)}
+    .hero-art{position:relative;height:440px}.moon{position:absolute;top:28px;right:14%;width:155px;height:155px;border-radius:50%;background:#ecdcb8;box-shadow:0 0 80px #decb9f4f,0 0 180px #decb9f1f}.moon:after{content:"";position:absolute;width:28px;height:28px;border-radius:50%;left:37px;top:43px;background:#d7c7aa;opacity:.35;box-shadow:50px 52px 0 5px #d7c7aa}.constellation{position:absolute;inset:20px 0 auto auto;width:70%;height:70%}.constellation svg{width:100%;height:100%}.note-card{position:absolute;left:8%;bottom:26px;width:min(390px,82%);padding:30px 28px;background:linear-gradient(140deg,rgba(19,32,55,.96),rgba(27,39,61,.92));border:1px solid #d9b98538;box-shadow:0 20px 40px #02061355}.note-card .micro{color:var(--gold)}.note-card p{font:italic 400 29px/1.42 var(--serif);letter-spacing:-.03em;margin:18px 0 0;color:#f4eddc}
+    .divider{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;text-align:center}.divider p{font:italic 400 19px/1.7 var(--serif);margin:0;color:#ded7cf}.divider span{color:var(--gold);padding-inline:18px}
+    .about{padding:95px 0}.section-head{display:grid;grid-template-columns:1fr .85fr;gap:60px;align-items:end;margin-bottom:42px}.section-head .micro{color:var(--gold)}.section-head h2{font:400 clamp(40px,5vw,66px)/1.22 var(--serif);letter-spacing:-.05em;margin:16px 0 0}.section-head h2 em{color:var(--gold);font-weight:400}.section-head p{margin:0;color:var(--mist);line-height:1.95}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:linear-gradient(140deg,rgba(24,38,61,.95),rgba(17,29,48,.95));border:1px solid #e7dccc22;padding:28px;min-height:250px}.card h3{font:400 29px/1.3 var(--serif);letter-spacing:-.03em;margin:18px 0 12px}.card p{margin:0;color:#cad0d6;font-size:14px;line-height:1.9}
+    .essays{padding:0 0 95px}.essay-box{background:linear-gradient(140deg,rgba(20,31,52,.96),rgba(15,24,39,.96));border:1px solid #d9b98533;padding:38px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.essay-box h2{font:400 clamp(40px,4.5vw,60px)/1.18 var(--serif);letter-spacing:-.05em;margin:16px 0 16px}.essay-box h2 em{color:var(--gold);font-weight:400}.essay-box p{margin:0;color:var(--mist);max-width:520px;line-height:1.95}.status{display:inline-block;margin-top:22px;padding:9px 12px;border:1px solid #d9b98555;color:var(--gold);font:600 10px/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase}.essay-note{justify-self:end;padding:26px 28px;background:rgba(217,185,133,.08);border:1px solid #d9b9852f;max-width:340px}.essay-note p{font:italic 400 28px/1.42 var(--serif);margin:0;color:#f0e8d7}
+    .signoff{padding:0 0 76px;display:flex;justify-content:space-between;gap:30px;align-items:end}.signoff h2{font:italic 400 clamp(30px,3.7vw,46px)/1.4 var(--serif);letter-spacing:-.03em;margin:15px 0 0}.signoff .micro{color:var(--gold)}.star{font:400 64px/1 var(--serif);color:var(--gold)}
+    footer{border-top:1px solid var(--line);padding:24px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner p,.footer-inner a{margin:0;text-decoration:none;color:#adb7c2;font:500 11px/1.6 var(--sans)}
+    @media(max-width:860px){.container{width:min(100% - 54px,720px)}.hero{grid-template-columns:1fr;gap:28px;padding-top:74px}.hero-art{height:350px}.section-head,.essay-box{grid-template-columns:1fr;gap:22px}.cards{grid-template-columns:1fr}.essay-note{justify-self:start}.signoff{padding-bottom:60px}}
+    @media(max-width:620px){.container{width:calc(100% - 38px)}.nav{min-height:74px}.brand{font-size:21px}.navlinks{gap:14px}.navlinks a{font-size:11px}.hero h1{font-size:clamp(50px,12vw,68px)}.note-card{left:2%;width:92%}.hero-art{height:330px}.about{padding:72px 0}.essay-box{padding:28px}.signoff{flex-wrap:wrap}.star{font-size:48px}}
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="masthead" id="top">
-    <div class="masthead-inner container">
-      <a class="brand" href="#top" aria-label="Mayank Dhalani, back to top">Mayank Dhalani<span class="punct">.</span></a>
-      <nav class="navigation" aria-label="Main menu">
-        <a href="#about">About</a>
-        <a href="#poetry">Writing</a>
-        <a class="nav-pill" href="poetry/">Poetry blog ↗</a>
-      </nav>
-    </div>
-  </header>
-  <div class="masthead-caption" aria-hidden="true">
-    <div class="container">
-      <p>Notes from a life in progress</p>
-      <p>Medicine · Words · Wonder</p>
-    </div>
-  </div>
-
-  <main id="main">
-    <section class="hero container" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="micro kicker">A little about me</div>
-        <h1 id="hero-title"><span>Between</span><span>the known</span><span>and the <em>felt.</em></span></h1>
-        <p class="hero-lede">Hello, I'm <strong>Mayank</strong> — a physician drawn to questions, a writer drawn to feelings, and someone learning to find a little wonder in the everyday. This is where those worlds meet.</p>
-        <div class="hero-buttons">
-          <a class="btn" href="poetry/">Read my poetry <span aria-hidden="true">↗</span></a>
-          <a class="underlink" href="#about">A little more about me ↓</a>
-        </div>
-      </div>
-
-      <div class="illustration" aria-hidden="true">
-        <svg class="tree-silhouettes hero-trees" viewBox="0 0 620 350" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <!-- Three quietly branching broadleaf trees, like faded ink on old paper. -->
-          <g class="branches" stroke-width="7">
-            <path d="M102 349 C107 290 108 238 103 168 M105 243 C87 213 65 198 52 183 M104 222 C128 197 142 175 146 143"/>
-            <path d="M311 349 C312 274 316 214 303 138 M309 242 C285 206 266 199 251 181 M310 220 C332 189 347 164 357 136" stroke-width="8"/>
-            <path d="M526 349 C525 293 522 249 528 204 M524 274 C504 248 482 235 467 222 M525 258 C544 233 560 223 579 205" stroke-width="6"/>
-          </g>
-          <g class="crown">
-            <path d="M38 167 C15 155 20 125 41 114 C32 88 62 73 82 81 C94 53 130 56 142 83 C167 77 185 103 173 124 C193 142 180 169 153 174 C142 193 115 189 104 177 C78 194 50 187 38 167 Z"/>
-            <path d="M235 171 C212 153 223 121 244 114 C235 82 268 65 289 77 C296 42 338 37 355 68 C382 61 401 87 391 109 C417 125 408 160 379 165 C365 188 335 190 319 178 C289 198 256 191 235 171 Z"/>
-            <path d="M461 228 C440 212 443 186 461 178 C453 154 478 139 497 147 C512 123 545 128 553 149 C577 142 598 162 588 185 C608 203 592 228 571 229 C562 245 534 243 525 236 C503 253 475 247 461 228 Z"/>
-          </g>
-        </svg>
-        <div class="shadow-sheet"></div>
-        <div class="illustrated-sheet">
-          <div class="sheet-heading"><span>Collected thoughts</span><span>No. 001</span></div>
-          <svg class="botanical" viewBox="0 0 360 300" role="presentation" xmlns="http://www.w3.org/2000/svg">
-            <circle class="sun" cx="187" cy="116" r="55" />
-            <circle class="glow" cx="187" cy="116" r="71" />
-            <circle class="glow" cx="187" cy="116" r="89" />
-            <path d="M179 286 C170 245 155 202 142 151 C134 120 130 93 129 54" />
-            <path d="M179 286 C193 230 224 195 251 150 C271 117 284 85 291 51" />
-            <path d="M170 252 C136 231 110 226 73 225" />
-            <path d="M191 247 C225 222 251 218 290 225" />
-            <path d="M152 188 C124 181 107 167 92 141" />
-            <path d="M212 204 C233 174 257 169 280 164" />
-            <path d="M142 151 C118 132 112 115 110 97" />
-            <path d="M251 150 C234 124 235 108 239 85" />
-            <ellipse cx="106" cy="221" rx="32" ry="10" transform="rotate(10 106 221)" />
-            <ellipse cx="266" cy="222" rx="32" ry="10" transform="rotate(-12 266 222)" />
-            <ellipse cx="96" cy="148" rx="25" ry="9" transform="rotate(55 96 148)" />
-            <ellipse cx="286" cy="161" rx="25" ry="9" transform="rotate(-23 286 161)" />
-            <ellipse cx="103" cy="105" rx="23" ry="8" transform="rotate(61 103 105)" />
-            <ellipse cx="248" cy="89" rx="23" ry="8" transform="rotate(-58 248 89)" />
-            <path d="M129 55 Q118 46 111 35 M129 55 Q139 44 145 34 M129 55 Q126 37 129 24" />
-            <path d="M291 52 Q277 40 274 26 M291 52 Q301 38 311 31 M291 52 Q289 34 292 20" />
-            <path d="M73 225 Q61 215 55 202 M73 225 Q61 237 45 239" />
-            <path d="M290 225 Q302 215 314 208 M290 225 Q302 236 321 235" />
-            <circle cx="40" cy="83" r="2" />
-            <circle cx="323" cy="117" r="2" />
-            <circle cx="60" cy="170" r="1.7" />
-            <circle cx="312" cy="265" r="2" />
-          </svg>
-          <div class="sheet-bottom">On the art of<br>paying attention.<small>An unfinished notebook</small></div>
-        </div>
-        <div class="paper-label"><span>Some moments deserve a second look.</span><small>A note to myself</small></div>
-      </div>
-    </section>
-
-    <div class="interlude">
-      <div class="interlude-inner container">
-        <span class="star" aria-hidden="true">✳</span>
-        <p>There is a certain poetry in being curious.</p>
-        <span class="star" aria-hidden="true">✳</span>
-      </div>
-    </div>
-
-    <section id="about" class="about container" aria-labelledby="about-title">
-      <div class="section-header">
-        <div>
-          <span class="micro" style="color:var(--wine)">Chapter one / About</span>
-          <h2 id="about-title" class="section-heading">A person of<br><em>many interests.</em></h2>
-        </div>
-        <p class="section-intro">I'm interested in what makes us human — how we heal, what art makes us feel, and how stories help us find meaning in ordinary days. To me, those worlds have always belonged together.</p>
-      </div>
-
-      <div class="chapters">
-        <article class="chapter">
-          <span class="chapter-no micro">01 — The science</span>
-          <h3>Medicine &amp; research</h3>
-          <p>I'm a physician and researcher at Mayo Clinic in Florida. I care about asking better questions, exploring new ideas, and finding answers that matter to patients.</p>
-        </article>
-        <article class="chapter">
-          <span class="chapter-no micro">02 — The words</span>
-          <h3>Poetry &amp; literature</h3>
-          <p>Some thoughts don't arrive as neat conclusions. I write poetry and reflections to give those thoughts a place to land.</p>
-        </article>
-        <article class="chapter">
-          <span class="chapter-no micro">03 — The art of noticing</span>
-          <h3>Art &amp; the everyday</h3>
-          <p>I love art for its ability to express what words sometimes cannot. Add books, music, mountain trails, and conversations that run longer than planned, and you have some of my favourite ways to stay curious.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="poetry" class="poetry" aria-labelledby="poetry-title">
-      <div class="poetry-inner container">
-        <div class="poetry-copy">
-          <div class="micro">Chapter two / The writing room</div>
-          <h2 id="poetry-title">A home for<br>the <em>unsaid.</em></h2>
-          <p>Poems, fragments, and reflections — a collection of things I've tried to understand by putting them into words. The writing room now has a home of its own. Come in, take your time, and read.</p>
-          <a class="btn" href="poetry/">Enter the poetry blog <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="poetry-note" aria-label="An invitation to read">
-          <div class="quote-mark" aria-hidden="true">“</div>
-          <p>For the feelings that linger, and the words we find for them.</p>
-          <span class="note-end micro">A small invitation</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="essays" id="essays" aria-labelledby="essays-title">
-      <div class="essays-inner container">
-        <div>
-          <span class="micro">Chapter three / Notes to come</span>
-          <h2 id="essays-title">Letters from<br>the <em>in-between.</em></h2>
-          <p class="essays-description">A little space for weekly essays and a future newsletter — thoughts on art, books, ideas, and the ordinary things worth thinking about. The first pages are still unwritten.</p>
-          <span class="essay-status">Coming soon</span>
-        </div>
-        <div class="letter-sheet" aria-hidden="true">
-          <span class="micro letter-no">The unwritten pages / No. 001</span>
-          <p class="letter-title">Dear reader,<br>more to come.</p>
-          <div class="letter-rule"></div>
-          <p class="letter-foot">An essay, a thought, a note from the week.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="signoff container" aria-label="Closing note">
-      <svg class="tree-silhouettes signoff-trees" viewBox="0 0 620 350" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <!-- Three quietly branching broadleaf trees, like faded ink on old paper. -->
-          <g class="branches" stroke-width="7">
-            <path d="M102 349 C107 290 108 238 103 168 M105 243 C87 213 65 198 52 183 M104 222 C128 197 142 175 146 143"/>
-            <path d="M311 349 C312 274 316 214 303 138 M309 242 C285 206 266 199 251 181 M310 220 C332 189 347 164 357 136" stroke-width="8"/>
-            <path d="M526 349 C525 293 522 249 528 204 M524 274 C504 248 482 235 467 222 M525 258 C544 233 560 223 579 205" stroke-width="6"/>
-          </g>
-          <g class="crown">
-            <path d="M38 167 C15 155 20 125 41 114 C32 88 62 73 82 81 C94 53 130 56 142 83 C167 77 185 103 173 124 C193 142 180 169 153 174 C142 193 115 189 104 177 C78 194 50 187 38 167 Z"/>
-            <path d="M235 171 C212 153 223 121 244 114 C235 82 268 65 289 77 C296 42 338 37 355 68 C382 61 401 87 391 109 C417 125 408 160 379 165 C365 188 335 190 319 178 C289 198 256 191 235 171 Z"/>
-            <path d="M461 228 C440 212 443 186 461 178 C453 154 478 139 497 147 C512 123 545 128 553 149 C577 142 598 162 588 185 C608 203 592 228 571 229 C562 245 534 243 525 236 C503 253 475 247 461 228 Z"/>
-          </g>
-        </svg>
+  <div class="sky" aria-hidden="true"></div>
+  <header><nav class="container nav"><a class="brand" href="./">Mayank Dhalani<span>.</span></a><div class="navlinks"><a href="#about">About</a><a href="#essays">Essays</a><a class="pill" href="poetry/">Poetry ↗</a></div></nav></header>
+  <main>
+    <section class="hero container">
       <div>
-        <span class="micro" style="color:var(--wine)">Until the next page</span>
-        <h2>Thank you for stopping by.</h2>
+        <div class="eyebrow micro">Medicine · Poetry · Art</div>
+        <h1>Notes under<br>a <em>quiet sky.</em></h1>
+        <p>Hello, I’m Mayank — a physician and researcher at Mayo Clinic in Florida, someone drawn to poetry, and someone who keeps returning to art, books, and the small questions that make a life feel more fully lived.</p>
+        <div class="actions"><a class="button" href="poetry/">Enter the poetry room ↗</a><a class="textlink" href="#about">Read a little more ↓</a></div>
       </div>
-      <span class="endmark" aria-hidden="true">✳</span>
+      <div class="hero-art" aria-hidden="true">
+        <div class="moon"></div>
+        <div class="constellation"><svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg"><g stroke="#d9b985" stroke-width="1.2" fill="none" opacity=".7"><path d="M32 182 C75 145 96 121 124 81 C151 110 173 126 224 133 C250 91 286 70 352 55"/><path d="M124 81 C145 47 179 35 216 47"/><path d="M224 133 C242 163 264 183 300 194"/></g><g fill="#f6f1e8"><circle cx="32" cy="182" r="2.4"/><circle cx="124" cy="81" r="2.6"/><circle cx="224" cy="133" r="2.5"/><circle cx="352" cy="55" r="2.7"/><circle cx="216" cy="47" r="2.2"/><circle cx="300" cy="194" r="2.3"/></g></svg></div>
+        <div class="note-card"><div class="micro">A small introduction</div><p>Some thoughts arrive like daylight. Others only make sense at night.</p></div>
+      </div>
     </section>
+    <div class="divider"><p><span aria-hidden="true">✳</span> There is a certain poetry in paying attention. <span aria-hidden="true">✳</span></p></div>
+    <section id="about" class="about container">
+      <div class="section-head"><div><div class="micro">Chapter one / About</div><h2>A life made of<br><em>different rooms.</em></h2></div><p>I don’t think medicine, poetry, and art are separate worlds. For me, they’re different ways of noticing, understanding, and staying human.</p></div>
+      <div class="cards">
+        <article class="card"><div class="micro" style="color:var(--gold)">01 — The work</div><h3>Medicine & research</h3><p>I’m a physician and researcher. I care about asking better questions, thinking deeply, and doing work that stays close to patients and to meaning.</p></article>
+        <article class="card"><div class="micro" style="color:var(--gold)">02 — The words</div><h3>Poetry & reflection</h3><p>Some thoughts don’t arrive as explanations. They arrive as fragments, images, and feelings — and poetry gives them somewhere to land.</p></article>
+        <article class="card"><div class="micro" style="color:var(--gold)">03 — The elsewhere</div><h3>Art & the everyday</h3><p>Art, music, books, mountain trails, and conversations that run longer than planned — these are some of the ways I keep returning to wonder.</p></article>
+      </div>
+    </section>
+    <section id="essays" class="essays container"><div class="essay-box"><div><div class="micro" style="color:var(--gold)">Chapter two / Notes to come</div><h2>Letters from the<br><em>in-between.</em></h2><p>A little space for future essays and a weekly newsletter — thoughts on books, art, ideas, and the ordinary things worth thinking about.</p><span class="status">Coming soon</span></div><div class="essay-note"><p>Not everything belongs to a poem. Some things want a page of their own.</p></div></div></section>
+    <section class="container signoff"><div><div class="micro">Until the next page</div><h2>Thank you for stopping by.</h2></div><div class="star" aria-hidden="true">✳</div></section>
   </main>
-
-  <footer class="footer">
-    <div class="footer-inner container">
-      <p>© <span id="year">2026</span> Mayank Dhalani · Made with curiosity.</p>
-      <a href="#top">Back to the beginning ↑</a>
-    </div>
-  </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>
+  <footer><div class="container footer-inner"><p>© <span id="year"></span> Mayank Dhalani</p><a href="poetry/">Open the poetry page ↗</a></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
