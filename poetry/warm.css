@@ -1,0 +1,47 @@
+/* Warm editorial palette with a small Van Gogh-inspired painted sky. */
+:root{color-scheme:light;--night:#f8f2e8;--night2:#ebe1d3;--blue:#466886;--panel:#fffaf2;--gold:#a16a42;--mist:#58665f;--ink:#2d3b38;--line:#d7cbb9}
+body{background:#f8f2e8;color:var(--ink)}
+.bg{background:radial-gradient(ellipse at 79% 18%,rgba(234,185,116,.35),transparent 24%),radial-gradient(ellipse at 16% 70%,rgba(173,203,208,.25),transparent 35%),linear-gradient(160deg,#faf6ef,#f0e7d9 65%,#f8f2e8)}
+.swirl{opacity:.19;filter:sepia(.34)}.stars::before,.stars::after{opacity:.07;filter:invert(1)}
+header,.running,.divider,footer{border-color:var(--line)}
+.brand{display:inline-flex;align-items:center;gap:10px}
+.brandmark{width:36px;height:36px;border-radius:9px;flex:none}
+.navlinks a,.running{color:#526359}.navlinks .selected{color:#995f43}
+.eyebrow,.section-head .micro,.num,.count,.ending .micro,.reader-date{color:#9e6540}
+.hero p,.section-head p{color:#57655e}.hero a{color:#995d40;border-color:#b88961}
+.scene{overflow:hidden;border-radius:10px;border:1px solid #d0c1a9;background:radial-gradient(ellipse at 72% 28%,rgba(252,230,180,.7),transparent 28%),radial-gradient(ellipse at 28% 78%,#92a8c0,transparent 55%),linear-gradient(145deg,#aabed1,#ced9da 50%,#eee2c7 90%);box-shadow:0 16px 40px rgba(84,85,73,.09)}
+.moon{background:#f8d998;box-shadow:0 0 58px rgba(248,212,141,.65),0 0 110px rgba(248,212,141,.35)}
+.moon::after{background:#dcba81}
+.swirl-lines path{stroke:rgba(63,108,158,.5);stroke-width:2.4}
+.swirl-lines .gold{stroke:rgba(176,108,62,.59)}
+.divider p{color:#6b6058}.divider span{color:#9a6846}
+.toolbar,.item{border-color:var(--line)}
+.search{background:#fffcf6;color:#2d3b38;border:1px solid #cbb8a0;border-radius:5px}
+.search::placeholder{color:#77776e}.searchwrap{color:#59665e}
+.item:hover{background:rgba(255,250,242,.62)}
+.item h3 a{color:#2e403a}.item h3 a:hover{color:#a16a42}
+.date{color:#8e7968}.excerpt{color:#637168}.read{color:#975a3d;border-color:#ae8060}
+.ending h2{color:#3d4840}
+.footer-inner p,.footer-inner a{color:#6c776f}
+/* Each individual poem is read on very light paper, so photographs have contrast. */
+body.reading-mode{background:#fffaf3;color:#2a3d38}
+body.reading-mode .bg,body.reading-mode .swirl,body.reading-mode .stars{display:none}
+body.reading-mode header,body.reading-mode .running,body.reading-mode footer,body.reading-mode .reader{background:#fffaf3}
+body.reading-mode .reader h1{color:#304139}
+body.reading-mode .reader-date{color:#976a49}
+body.reading-mode .line{background:#dfd3c1}
+body.reading-mode .back,body.reading-mode .actions a{color:#955d42;border-color:#b98561}
+body.reading-mode .body{color:#38433e;line-height:2.05}
+body.reading-mode .art{background:#fffdf8;border:1px solid #e7dfd2;padding:clamp(12px,3vw,25px);box-shadow:0 14px 42px rgba(106,89,70,.09);margin-bottom:52px}
+body.reading-mode .art img{background:#fffdf8;max-height:600px;object-fit:contain}
+body.reading-mode .art figcaption{color:#766f65}
+body.reading-mode .ending{background:#f6eee4;padding-top:60px;margin-top:15px}
+.poem-navigation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:64px;padding-top:27px;border-top:1px solid #e0d5c7}
+.poem-nav-link{padding:20px 22px;min-height:105px;background:#f6eddf;border:1px solid #dcc8ae;text-decoration:none;display:flex;flex-direction:column;justify-content:center;align-items:start;gap:6px;transition:background .2s,border-color .2s}
+.poem-nav-link:hover{background:#f0e1cc;border-color:#bd9972}
+.poem-nav-link small{color:#98633f;font:600 11px/1.5 var(--sans)}
+.poem-nav-link strong{color:#32433b;font:400 20px/1.4 var(--serif)}
+.poem-nav-link.next{text-align:right;align-items:end;grid-column:2}
+.poem-navigation .poem-nav-link[hidden]{display:none!important}
+@media(max-width:620px){.brandmark{width:30px;height:30px}.poem-navigation{gap:10px}.poem-nav-link{min-height:107px;padding:13px}.poem-nav-link strong{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.poem-nav-link{transition:none}}
