@@ -1,181 +1,54 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a1829">
-  <meta name="description" content="A poetry journal by Mayank Dhalani. Thoughts beneath a starry sky — coming soon. Read my current poems on WordPress.">
-  <meta property="og:title" content="Poetry — Mayank Dhalani">
-  <meta property="og:description" content="Some thoughts belong to the night. A new home for poems is coming soon.">
-  <meta property="og:type" content="website">
-  <link rel="canonical" href="https://mayankdhalani.com/poetry/">
-  <title>Poetry | Mayank Dhalani</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      color-scheme:dark;
-      --night:#0a1829;
-      --night-deep:#061120;
-      --cream:#f5ecdc;
-      --soft:#b8c4cb;
-      --gold:#dfc28b;
-      --line:rgba(239,228,204,.19);
-      --serif:"Playfair Display",Georgia,serif;
-      --sans:"DM Sans",system-ui,sans-serif;
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;min-width:320px;background:var(--night-deep);color:var(--cream);font:400 15px/1.8 var(--sans);-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
-    ::selection{color:var(--night);background:var(--gold)}
-    .page{
-      isolation:isolate;min-height:100svh;position:relative;overflow:hidden;
-      background:radial-gradient(ellipse at 69% 25%,#1b3349 0%,#101f34 35%,var(--night) 66%,#071421 100%);
-      display:flex;flex-direction:column;
-    }
-    .page:before{
-      content:"";position:absolute;z-index:-1;inset:0;
-      background:linear-gradient(105deg,rgba(7,17,29,.26),transparent 47%,rgba(9,20,33,.03));
-      pointer-events:none;
-    }
-    .night-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1}
-    .container{width:min(1160px,calc(100% - 100px));margin-inline:auto}
-    .micro{font:700 10px/1.4 var(--sans);letter-spacing:.23em;text-transform:uppercase}
-    .skip{position:absolute;z-index:20;top:-70px;left:10px;padding:10px 16px;color:#102638;background:var(--cream)}
-    .skip:focus{top:12px}
-    header{border-bottom:1px solid var(--line);position:relative}
-    .nav{height:92px;display:flex;align-items:center;justify-content:space-between;gap:30px}
-    .brand{text-decoration:none;font:400 25px/1.3 var(--serif);letter-spacing:-.05em;white-space:nowrap}
-    .brand span{color:var(--gold)}
-    .nav-right{display:flex;align-items:center;gap:36px}
-    .nav-tag{color:#a9b9c7}
-    .home-link{font:600 12px/1.4 var(--sans);text-decoration:none;border-bottom:1px solid rgba(223,194,139,.5);padding-bottom:5px;white-space:nowrap}
-    .home-link:hover{color:var(--gold);border-color:var(--gold)}
-    main{flex:1;display:flex;align-items:center;position:relative;padding:94px 0 132px}
-    .hero{width:100%;position:relative}
-    .hero-content{max-width:750px;position:relative}
-    .eyebrow{display:flex;align-items:center;gap:13px;color:var(--gold)}
-    .eyebrow:before{content:"";height:1px;width:31px;background:var(--gold);opacity:.85}
-    h1{
-      font:400 clamp(58px,6.8vw,104px)/1.15 var(--serif);
-      letter-spacing:-.062em;margin:32px 0 29px;text-wrap:balance;
-    }
-    h1 em{font-weight:400;color:var(--gold)}
-    .description{max-width:535px;margin:0;color:#c4ced2;font:400 16px/2 var(--sans)}
-    .status{display:inline-block;margin-top:33px;padding:10px 16px;color:#ead0a0;border:1px solid rgba(223,194,139,.5);font:700 10px/1.4 var(--sans);letter-spacing:.19em;text-transform:uppercase}
-    .divider{width:54px;height:1px;background:rgba(221,197,149,.65);margin:34px 0 23px}
-    .link-note{margin:0 0 23px;color:#a8bac3;font:400 14px/1.8 var(--sans)}
-    .wordpress-link{
-      display:inline-flex;align-items:center;justify-content:space-between;gap:28px;
-      padding:15px 22px;background:#ddc08b;color:#142639;min-height:52px;
-      border:1px solid #ddc08b;text-decoration:none;font:700 12px/1.5 var(--sans);
-      transition:background .2s ease,transform .2s ease;
-    }
-    .wordpress-link:hover{background:#efd8a8;transform:translateY(-2px)}
-    .small-star{font:400 25px/1 var(--serif);color:var(--gold);margin-left:13px;vertical-align:middle}
-    .margin-note{
-      position:absolute;right:1%;bottom:8%;width:185px;transform:rotate(4deg);
-      color:rgba(219,206,180,.73);font:italic 400 18px/1.6 var(--serif);
-      padding-left:23px;border-left:1px solid rgba(220,194,145,.3);
-    }
-    footer{position:relative;border-top:1px solid var(--line)}
-    .footer-inner{min-height:73px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .footer-inner span,.footer-inner a{font:500 11px/1.5 var(--sans);color:#a2b1b9;text-decoration:none}
-    .footer-inner a:hover{color:var(--gold)}
-    @media(max-width:850px){
-      .container{width:min(100% - 64px,660px)}
-      .nav{height:78px}
-      main{padding:85px 0 145px;align-items:flex-start}
-      .hero-content{max-width:640px}
-      h1{font-size:clamp(58px,9vw,84px)}
-      .margin-note{display:none}
-      .night-canvas{opacity:.76}
-      .description{max-width:520px}
-    }
-    @media(max-width:520px){
-      .container{width:calc(100% - 42px)}
-      .brand{font-size:22px}
-      .nav-right{gap:12px}
-      .nav-tag{display:none}
-      main{padding:72px 0 104px}
-      h1{font-size:clamp(52px,12vw,70px);margin:28px 0 24px}
-      .description{font-size:14px;line-height:1.95}
-      .status{margin-top:26px}
-      .divider{margin:28px 0 20px}
-      .night-canvas{opacity:.52}
-      .footer-inner{min-height:90px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px}
-    }
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1429">
+<meta name="description" content="Thoughts in Starry Nights — poetry by Mayank Dhalani. Coming soon.">
+<title>Thoughts in Starry Nights — Mayank Dhalani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--ink:#f5eddd;--muted:#c2c5d0;--gold:#d9b985}
+*{box-sizing:border-box}html{min-height:100%}body{margin:0;min-height:100vh;background:#0b1429;color:var(--ink);font:400 15px/1.8 "DM Sans",sans-serif;overflow-x:hidden}
+a{color:inherit}a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.sky{position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 75% 26%,#314067 0%,transparent 39%),radial-gradient(ellipse at 20% 70%,#172a4b 0%,transparent 55%),linear-gradient(165deg,#080e21 0%,#111d37 66%,#202c42 100%)}
+.sky:before,.sky:after{content:"";position:absolute;inset:0;background-image:radial-gradient(1.3px 1.3px at 9% 14%,#fff 95%,transparent),radial-gradient(1px 1px at 20% 48%,#fff 95%,transparent),radial-gradient(2px 2px at 33% 17%,#fff 95%,transparent),radial-gradient(1px 1px at 44% 63%,#fff 95%,transparent),radial-gradient(1.5px 1.5px at 59% 11%,#fff 95%,transparent),radial-gradient(1px 1px at 76% 40%,#fff 95%,transparent),radial-gradient(2px 2px at 88% 22%,#fff 95%,transparent),radial-gradient(1px 1px at 94% 68%,#fff 95%,transparent),radial-gradient(1px 1px at 12% 83%,#fff 95%,transparent),radial-gradient(1.5px 1.5px at 67% 81%,#fff 95%,transparent);opacity:.8}
+.sky:after{transform:scale(1.25) rotate(17deg);opacity:.34}
+header{width:min(1160px,calc(100% - 50px));margin:auto;min-height:91px;display:flex;justify-content:space-between;align-items:center;gap:18px;border-bottom:1px solid #e9dfca25}
+.brand{text-decoration:none;font:400 23px/1.2 "Playfair Display",Georgia,serif;letter-spacing:-.04em}.brand span{color:var(--gold)}
+.back{text-decoration:none;font-size:12px;letter-spacing:.06em;color:#ded8c9}.back:hover,.wordpress:hover{color:var(--gold)}
+main{min-height:calc(100vh - 160px);display:flex;align-items:center;justify-content:center;position:relative;padding:90px 25px 115px;text-align:center}
+.moon{position:absolute;top:8%;right:16%;width:92px;height:92px;border-radius:50%;background:#f0dfb9;box-shadow:0 0 45px #e6d6b64d,0 0 120px #e6d6b625;opacity:.85}
+.content{position:relative;z-index:1;max-width:760px}
+.eyebrow{font-size:10px;letter-spacing:.29em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1{font:400 clamp(57px,9vw,112px)/1.16 "Playfair Display",Georgia,serif;letter-spacing:-.055em;margin:25px 0 22px}
+h1 em{font-weight:400;color:#e5c99b}
+.rule{height:1px;width:65px;background:var(--gold);margin:34px auto}
+.message{font:italic 400 clamp(18px,2.3vw,25px)/1.7 "Playfair Display",Georgia,serif;color:#e4dfd4;margin:0 auto 35px;max-width:580px}
+.status{display:inline-block;border:1px solid #d9b98580;color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.23em;text-transform:uppercase;padding:11px 19px;margin-bottom:34px}
+.wordpress{display:inline-flex;align-items:center;gap:17px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:7px;font-size:13px;font-weight:500}
+.horizon{position:absolute;bottom:0;left:0;width:100%;height:160px;z-index:0;opacity:.55}
+footer{width:min(1160px,calc(100% - 50px));margin:auto;display:flex;justify-content:space-between;gap:20px;border-top:1px solid #e9dfca25;padding:23px 0;color:#b1b7c1;font-size:11px}
+@media(max-width:600px){header{min-height:75px}.brand{font-size:20px}main{padding:110px 22px 110px;min-height:calc(100svh - 140px)}.moon{width:60px;height:60px;top:9%;right:12%}h1{font-size:clamp(52px,13vw,77px)}footer{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-  <div class="page">
-    <svg class="night-canvas" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="moon-halo"><stop offset="0" stop-color="#d6bb81" stop-opacity=".27"/><stop offset=".50" stop-color="#93b6bb" stop-opacity=".07"/><stop offset="1" stop-color="#93b6bb" stop-opacity="0"/></radialGradient>
-    <linearGradient id="crescent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4d5"/><stop offset="1" stop-color="#ccb784"/></linearGradient>
-  </defs>
-  <circle cx="1130" cy="245" r="260" fill="url(#moon-halo)"/>
-  <path d="M1122 165 A87 87 0 1 0 1226 291 A82 82 0 0 1 1122 165 Z" fill="url(#crescent)" opacity=".87"/>
-  <g fill="none" stroke="#d1c6ad" opacity=".11" stroke-width="1">
-    <path d="M110 215 Q540 60 934 168"/>
-    <path d="M175 295 Q595 132 989 235"/>
-    <path d="M840 410 Q1180 455 1460 300"/>
-  </g>
-  <circle cx="368" cy="197" r="2.24" fill="#fff4da" opacity="0.71"/><circle cx="581" cy="81" r="2.25" fill="#fff4da" opacity="0.36"/><circle cx="1245" cy="469" r="1.20" fill="#fff4da" opacity="0.66"/><circle cx="1206" cy="32" r="1.29" fill="#fff4da" opacity="0.64"/><circle cx="762" cy="389" r="1.48" fill="#fff4da" opacity="0.60"/><circle cx="772" cy="275" r="1.74" fill="#fff4da" opacity="0.25"/><circle cx="624" cy="565" r="1.36" fill="#fff4da" opacity="0.35"/><circle cx="681" cy="222" r="2.00" fill="#fff4da" opacity="0.31"/><circle cx="1380" cy="360" r="0.90" fill="#fff4da" opacity="0.61"/><circle cx="1165" cy="531" r="0.86" fill="#fff4da" opacity="0.68"/><circle cx="1292" cy="388" r="1.42" fill="#fff4da" opacity="0.36"/><circle cx="1059" cy="67" r="1.92" fill="#fff4da" opacity="0.39"/><circle cx="469" cy="231" r="2.16" fill="#fff4da" opacity="0.59"/><circle cx="83" cy="677" r="1.61" fill="#fff4da" opacity="0.71"/><circle cx="598" cy="284" r="0.78" fill="#fff4da" opacity="0.76"/><circle cx="857" cy="547" r="1.40" fill="#fff4da" opacity="0.46"/><circle cx="282" cy="306" r="1.27" fill="#fff4da" opacity="0.46"/><circle cx="1001" cy="548" r="1.96" fill="#fff4da" opacity="0.69"/><circle cx="1151" cy="617" r="1.95" fill="#fff4da" opacity="0.66"/><circle cx="161" cy="640" r="1.23" fill="#fff4da" opacity="0.60"/><circle cx="1301" cy="743" r="1.00" fill="#fff4da" opacity="0.73"/><circle cx="1243" cy="400" r="1.46" fill="#fff4da" opacity="0.73"/><circle cx="895" cy="704" r="0.86" fill="#fff4da" opacity="0.29"/><circle cx="367" cy="692" r="1.53" fill="#fff4da" opacity="0.45"/><circle cx="597" cy="493" r="1.20" fill="#fff4da" opacity="0.47"/><circle cx="1385" cy="590" r="1.74" fill="#fff4da" opacity="0.75"/><circle cx="1136" cy="715" r="0.99" fill="#fff4da" opacity="0.56"/><circle cx="1167" cy="619" r="2.22" fill="#fff4da" opacity="0.74"/><circle cx="1230" cy="677" r="1.03" fill="#fff4da" opacity="0.44"/><circle cx="855" cy="509" r="1.99" fill="#fff4da" opacity="0.49"/><circle cx="762" cy="604" r="1.99" fill="#fff4da" opacity="0.42"/><circle cx="284" cy="316" r="1.87" fill="#fff4da" opacity="0.73"/><circle cx="952" cy="559" r="1.20" fill="#fff4da" opacity="0.57"/><circle cx="438" cy="480" r="1.16" fill="#fff4da" opacity="0.58"/><circle cx="119" cy="529" r="1.94" fill="#fff4da" opacity="0.62"/><circle cx="117" cy="82" r="1.65" fill="#fff4da" opacity="0.38"/><circle cx="229" cy="184" r="1.11" fill="#fff4da" opacity="0.45"/><circle cx="633" cy="694" r="1.92" fill="#fff4da" opacity="0.54"/><circle cx="761" cy="529" r="1.26" fill="#fff4da" opacity="0.54"/><circle cx="581" cy="290" r="0.73" fill="#fff4da" opacity="0.31"/><circle cx="600" cy="58" r="1.06" fill="#fff4da" opacity="0.44"/><circle cx="1395" cy="146" r="0.93" fill="#fff4da" opacity="0.30"/><circle cx="1044" cy="197" r="1.56" fill="#fff4da" opacity="0.36"/><circle cx="227" cy="325" r="1.95" fill="#fff4da" opacity="0.31"/><circle cx="279" cy="75" r="1.11" fill="#fff4da" opacity="0.69"/><circle cx="500" cy="751" r="1.37" fill="#fff4da" opacity="0.30"/><circle cx="1391" cy="578" r="1.03" fill="#fff4da" opacity="0.56"/><circle cx="129" cy="481" r="2.10" fill="#fff4da" opacity="0.41"/><circle cx="799" cy="685" r="1.57" fill="#fff4da" opacity="0.57"/><circle cx="181" cy="359" r="1.45" fill="#fff4da" opacity="0.43"/><circle cx="1272" cy="144" r="1.83" fill="#fff4da" opacity="0.36"/><circle cx="856" cy="156" r="1.01" fill="#fff4da" opacity="0.39"/><circle cx="1227" cy="339" r="1.88" fill="#fff4da" opacity="0.35"/><circle cx="1351" cy="576" r="1.86" fill="#fff4da" opacity="0.61"/><circle cx="326" cy="394" r="2.07" fill="#fff4da" opacity="0.41"/><circle cx="842" cy="490" r="2.02" fill="#fff4da" opacity="0.32"/><circle cx="673" cy="354" r="1.09" fill="#fff4da" opacity="0.65"/><circle cx="588" cy="514" r="1.12" fill="#fff4da" opacity="0.32"/><circle cx="860" cy="345" r="1.47" fill="#fff4da" opacity="0.68"/><circle cx="262" cy="338" r="0.66" fill="#fff4da" opacity="0.62"/><circle cx="784" cy="144" r="1.85" fill="#fff4da" opacity="0.43"/><circle cx="911" cy="172" r="1.24" fill="#fff4da" opacity="0.64"/><circle cx="694" cy="652" r="1.88" fill="#fff4da" opacity="0.55"/><circle cx="774" cy="390" r="2.16" fill="#fff4da" opacity="0.50"/><circle cx="1351" cy="598" r="0.67" fill="#fff4da" opacity="0.65"/><circle cx="484" cy="110" r="1.46" fill="#fff4da" opacity="0.75"/><circle cx="1178" cy="323" r="1.02" fill="#fff4da" opacity="0.35"/><circle cx="1123" cy="626" r="1.60" fill="#fff4da" opacity="0.63"/><circle cx="46" cy="57" r="2.13" fill="#fff4da" opacity="0.66"/><circle cx="635" cy="385" r="2.15" fill="#fff4da" opacity="0.47"/><circle cx="38" cy="95" r="1.50" fill="#fff4da" opacity="0.40"/><circle cx="1019" cy="731" r="1.40" fill="#fff4da" opacity="0.53"/><circle cx="446" cy="649" r="2.34" fill="#fff4da" opacity="0.30"/><circle cx="82" cy="230" r="1.98" fill="#fff4da" opacity="0.33"/><circle cx="774" cy="632" r="1.17" fill="#fff4da" opacity="0.48"/><circle cx="879" cy="512" r="1.69" fill="#fff4da" opacity="0.71"/><circle cx="734" cy="565" r="1.42" fill="#fff4da" opacity="0.49"/><circle cx="188" cy="687" r="1.83" fill="#fff4da" opacity="0.58"/><circle cx="1360" cy="717" r="2.12" fill="#fff4da" opacity="0.43"/><circle cx="190" cy="315" r="0.83" fill="#fff4da" opacity="0.61"/><circle cx="339" cy="397" r="2.31" fill="#fff4da" opacity="0.62"/><circle cx="567" cy="583" r="1.93" fill="#fff4da" opacity="0.64"/><circle cx="889" cy="633" r="1.03" fill="#fff4da" opacity="0.65"/><circle cx="1388" cy="701" r="1.04" fill="#fff4da" opacity="0.74"/><circle cx="1057" cy="594" r="1.11" fill="#fff4da" opacity="0.69"/><circle cx="205" cy="650" r="0.66" fill="#fff4da" opacity="0.27"/><circle cx="693" cy="358" r="1.63" fill="#fff4da" opacity="0.61"/><circle cx="1322" cy="640" r="2.13" fill="#fff4da" opacity="0.60"/><circle cx="1273" cy="394" r="1.18" fill="#fff4da" opacity="0.30"/><circle cx="1337" cy="239" r="1.93" fill="#fff4da" opacity="0.55"/><circle cx="1321" cy="718" r="1.56" fill="#fff4da" opacity="0.43"/><circle cx="651" cy="150" r="2.03" fill="#fff4da" opacity="0.26"/><circle cx="1225" cy="467" r="1.84" fill="#fff4da" opacity="0.75"/><circle cx="913" cy="695" r="2.09" fill="#fff4da" opacity="0.32"/><circle cx="906" cy="109" r="1.47" fill="#fff4da" opacity="0.39"/><circle cx="829" cy="715" r="0.72" fill="#fff4da" opacity="0.46"/><circle cx="1360" cy="367" r="2.22" fill="#fff4da" opacity="0.39"/><circle cx="1376" cy="594" r="2.34" fill="#fff4da" opacity="0.36"/><circle cx="423" cy="87" r="2.12" fill="#fff4da" opacity="0.44"/><circle cx="1087" cy="514" r="0.78" fill="#fff4da" opacity="0.48"/><circle cx="698" cy="429" r="1.86" fill="#fff4da" opacity="0.40"/><circle cx="747" cy="602" r="0.80" fill="#fff4da" opacity="0.31"/><circle cx="667" cy="609" r="1.52" fill="#fff4da" opacity="0.25"/><circle cx="928" cy="765" r="1.09" fill="#fff4da" opacity="0.32"/><circle cx="714" cy="706" r="1.20" fill="#fff4da" opacity="0.64"/><circle cx="642" cy="188" r="1.51" fill="#fff4da" opacity="0.26"/><circle cx="621" cy="448" r="2.24" fill="#fff4da" opacity="0.27"/><circle cx="1256" cy="218" r="0.78" fill="#fff4da" opacity="0.67"/><circle cx="938" cy="643" r="2.11" fill="#fff4da" opacity="0.71"/><circle cx="494" cy="260" r="1.38" fill="#fff4da" opacity="0.76"/><circle cx="1334" cy="568" r="1.77" fill="#fff4da" opacity="0.71"/><circle cx="1353" cy="750" r="1.47" fill="#fff4da" opacity="0.42"/><circle cx="76" cy="236" r="1.65" fill="#fff4da" opacity="0.54"/><circle cx="60" cy="624" r="0.91" fill="#fff4da" opacity="0.30"/><circle cx="141" cy="101" r="1.55" fill="#fff4da" opacity="0.56"/><circle cx="1379" cy="383" r="0.98" fill="#fff4da" opacity="0.25"/>
-  <g fill="none" stroke="#e1d6b6" stroke-width="1" opacity=".37">
-    <path d="M126 145 L201 184 L262 115 L333 146"/>
-    <path d="M898 336 L951 391 L1028 364 L1083 430"/>
-    <path d="M1206 472 L1262 431 L1329 477"/>
-  </g>
-  <g fill="#e9d6a2" opacity=".77">
-    <path d="M331 67 v11 M325.5 72.5 h11 M330 71 l-3 -3 M332 75 l3 3 M332 71 l3 -3 M330 75 l-3 3"/>
-    <path d="M844 134 v14 M837 141 h14"/>
-    <path d="M1363 210 v13 M1356.5 216.5 h13"/>
-    <path d="M1012 512 v12 M1006 518 h12"/>
-  </g>
-  <path d="M0 835 Q200 782 374 812 T743 790 Q931 757 1075 806 T1440 785 L1440 900 L0 900 Z" fill="#0a1b2b" opacity=".85"/>
-  <path d="M0 865 Q260 812 442 848 T859 824 Q1172 787 1440 842 L1440 900 L0 900 Z" fill="#102234" opacity=".95"/>
-  <g fill="#0b1e2c" opacity=".94">
-    <path d="M1320 864 L1333 765 L1350 864 Z"/><path d="M1358 866 L1370 804 L1383 866 Z"/>
-    <path d="M122 876 L139 794 L157 876 Z"/><path d="M166 874 L176 819 L186 874 Z"/>
-  </g>
-</svg>
-    <header>
-      <nav class="nav container" aria-label="Main navigation">
-        <a class="brand" href="../" aria-label="Mayank Dhalani, homepage">Mayank Dhalani<span>.</span></a>
-        <div class="nav-right">
-          <span class="micro nav-tag">The writing room</span>
-          <a class="home-link" href="../">← Back to home</a>
-        </div>
-      </nav>
-    </header>
-    <main id="content">
-      <section class="hero container" aria-labelledby="poetry-title">
-        <div class="hero-content">
-          <div class="eyebrow micro">Poetry / An unfinished notebook</div>
-          <h1 id="poetry-title">Some thoughts<br>belong to<br>the <em>night.</em></h1>
-          <p class="description">For the thoughts that wander when the world grows quiet, and the feelings that are easier to understand beneath a sky full of stars. A new home for my poetry is taking shape.</p>
-          <span class="status">Coming soon</span>
-          <div class="divider" aria-hidden="true"></div>
-          <p class="link-note">Until these pages are ready, my poems are still here:</p>
-          <a class="wordpress-link" href="https://mayankdhalani.wordpress.com/" target="_blank" rel="noopener noreferrer">Read my poetry on WordPress <span aria-hidden="true">↗</span></a>
-          <span class="small-star" aria-hidden="true">✳</span>
-        </div>
-        <div class="margin-note" aria-hidden="true">A quiet place for words that arrive after dark.</div>
-      </section>
-    </main>
-    <footer>
-      <div class="footer-inner container">
-        <span>© <span id="year">2026</span> Mayank Dhalani · Between the lines.</span>
-        <a href="../">Return to the beginning ↑</a>
-      </div>
-    </footer>
-  </div>
-  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
-</body>
-</html>
+<div class="sky" aria-hidden="true"></div>
+<header><a class="brand" href="../">Mayank Dhalani<span>.</span></a><a class="back" href="../">← Back home</a></header>
+<main>
+<div class="moon" aria-hidden="true"></div>
+<div class="content">
+<div class="eyebrow">A quiet corner of the universe</div>
+<h1>Thoughts in<br><em>Starry Nights.</em></h1>
+<div class="rule"></div>
+<p class="message">For the thoughts that arrive after midnight, the feelings we cannot name, and the words we leave beneath the stars.</p>
+<div class="status">Coming soon</div><br>
+<a class="wordpress" href="https://mayankdhalani.wordpress.com/" target="_blank" rel="noopener noreferrer">Read my poetry on WordPress <span aria-hidden="true">↗</span></a>
+</div>
+<svg class="horizon" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="#070f20" d="M0 90Q130 62 220 98T440 103T660 96T880 85T1200 98V160H0Z"/><path fill="#0b1729" d="M0 112Q170 89 330 118T660 106T970 120T1200 110V160H0Z"/></svg>
+</main>
+<footer><span>© <span id="year">2026</span> Mayank Dhalani</span><span>Somewhere beneath the same sky.</span></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body></html>
