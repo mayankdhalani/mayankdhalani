@@ -1,18 +1,4 @@
-// Imported from the WordPress HTML snapshot supplied by the author (2026-10-31).
-// This snapshot contains 9 complete poems and one excerpt, not the blog's full multi-page export.
 window.POETRY_POSTS = [
-  {
-    "slug": "the-day-you-leave-home",
-    "title": "The Day You Leave Home",
-    "date": "2026-09-05",
-    "type": "excerpt",
-    "original": "https://mayankdhalani.wordpress.com/2026/09/05/the-day-you-leave-home/",
-    "excerpt": "There comes a day when a son or daughter packs a bag, stands at the door, and prepares to leave home to chase a dream, to build a career, find …",
-    "content": "",
-    "image": "",
-    "caption": "",
-    "externalCredit": "Originally shared from Live It Offbeat."
-  },
   {
     "slug": "river-song",
     "title": "River Song",
@@ -93,5 +79,50 @@ window.POETRY_POSTS = [
     "image": "https://mayankdhalani.wordpress.com/wp-content/uploads/2024/04/img_2877-1.jpg",
     "caption": "Artwork accompanying the original post",
     "content": "I’ve lost the spark, the will to dream,\nNo poetry flows from this pen,\nNew songs pass by, unheard, unseen\nMovies and books, come and go,it seems.\nYet in this cycle, I am lost,\nAdulthood’s grasp, Work, eat & sleep in endless repeat.\nI watch the sunrise change to sunset as I sit still,\nBut deep within, a hope remains, A longing to break free from these chains.\nTo rediscover the joy and let the rhythms of life once again regain\n\nBy Mayank Dhalani"
+  },
+  {
+    "slug": "mumbai-the-city-of-dreams",
+    "title": "Mumbai: The city of dreams",
+    "date": "2023-09-28",
+    "original": "https://mayankdhalani.wordpress.com/2023/09/28/mumbai-the-city-of-dreams/",
+    "image": "https://mayankdhalani.wordpress.com/wp-content/uploads/2023/09/img_20230928_100718_562.webp",
+    "caption": "Artwork accompanying the original post",
+    "content": "In Mumbai’s busy streets, I walk,\nFaces everywhere, emotions talk.\nJoy, despair & anger a public show,\nYet inside, mysteries only they know\nThe rich jog, the poor stroll,\nDogs walked with hearts full.\nBikers rush, fancy cars pass by,\nDisparities under the open sky.\nAt signals, beggars plead,\nWealthy hearts in cars may silently bleed.\nFrom Marine Drive to Dharavi’s swirl,\nStreet-side Vada Pav and chai to fancy cafes\nA mix of worlds, around every bend.\nYet, amidst this vibrant sea,\nObserving but what’s inside of me?\nStone-hearted or saturated soul,\nIn the city of dreams, where hearts sway.\n\nBy Mayank Dhalani"
+  },
+  {
+    "slug": "the-beauty-of-lifes-wildflower",
+    "title": "The beauty of life’s wildflower.",
+    "date": "2023-08-03",
+    "original": "https://mayankdhalani.wordpress.com/2023/08/03/the-beauty-of-lifes-wildflower/",
+    "image": "https://mayankdhalani.wordpress.com/wp-content/uploads/2023/08/e28ad4f727f4090d22adacff61b52c71.jpg",
+    "caption": "Artwork accompanying the original post",
+    "content": "In fields untamed, where nature weaves,\nWild flowers bloom among the leaves.\nTheir colors bold, their petals free,\nA vibrant dance of grace, you see.\nSo delicate, yet strong at heart,\nIn unity, they play their part.\nWild flowers bloom, a wondrous sight,\nA testament to life’s delight.\nIn every petal, a story told,\nOf nature’s wonders to behold.\nWith each wild flower that we find,\nA piece of magic fills our mind.\nSo cherish them, these gifts of grace,\nIn wildflower’s embrace, find solace.\n\nBy Mayank Dhalani"
+  },
+  {
+    "slug": "khali-diary",
+    "title": "खाली डायरी।",
+    "date": "2022-09-08",
+    "original": "https://mayankdhalani.wordpress.com/2022/09/08/%e0%a4%96%e0%a4%be%e0%a4%b2%e0%a5%80-%e0%a4%a1%e0%a4%be%e0%a4%af%e0%a4%b0%e0%a5%80%e0%a5%a4/",
+    "image": "https://mayankdhalani.wordpress.com/wp-content/uploads/2022/09/1cebd6aade0077d5f03fede2282541d2.jpg",
+    "caption": "Artwork accompanying the original post",
+    "content": "लिखता नही हु बोहोत पर डायरी रखना पसंद है मुझे,\nशायद इन खाली पन्नो को जिंदगी समझना पसंद है मुझे।"
+  },
+  {
+    "slug": "ghar-chod-jo-nikle",
+    "title": "घर छोड जो निकले।",
+    "date": "2022-08-25",
+    "original": "https://mayankdhalani.wordpress.com/2022/08/25/%e0%a4%98%e0%a4%b0-%e0%a4%9b%e0%a5%8b%e0%a4%a1-%e0%a4%9c%e0%a5%8b-%e0%a4%a8%e0%a4%bf%e0%a4%95%e0%a4%b2%e0%a5%87%e0%a5%a4/",
+    "image": "https://mayankdhalani.wordpress.com/wp-content/uploads/2022/08/screenshot_20220824-172602_google.jpg",
+    "caption": "Artwork accompanying the original post",
+    "content": "घर छोड के जो निकले थे कुछ करने\nना कुछ कर पा रहे हैं ना वापीस जा पा रहे है,\nखुद को सबित तो करना चाहते हैं पर मोका नहीं ढूंढ पा रहे है,\nये छोटी आंखो ने सपने तो बोहोत बड़े देख रखे हैं पर उन्हे पुरा करने का जस्बा नहीं जोड़ पा रहे है,\nघर वाले उम्मीद तो बहोत लगाए बैठे हैं पर उनपे खरा नहीं उतर पा रहे है,\nघर छोड के जो निकले थे अब वापीस नहीं जा पा रहे हैं।"
+  },
+  {
+    "slug": "the-train-berth",
+    "title": "The train berth",
+    "date": "2022-08-19",
+    "original": "https://mayankdhalani.wordpress.com/2022/08/19/the-train-berth/",
+    "image": "https://mayankdhalani.wordpress.com/wp-content/uploads/2022/08/1c71b07b0d58199581cad8e646e607f5.gif",
+    "caption": "Artwork accompanying the original post",
+    "content": "In every train berth, we find different stories,\nEvery seat has unique stories of joy, love, broken dreams and hope.\n\nAt every station, there is a new smell, new wondering eyes,\nThere are families feeling lonely&\nalso, singles who feel attached\n\nThere are smiles going toward home,\nalso, some despair of leaving home.\n\nThere are groups playing songs and cards and also\nLone wolves with earphones seating near windows imagining their perfect lives!\n\nThese are temporary berth families who change with stations like every stage of life.🖤\n\n– “The train berth”\nMayank Dhalani"
   }
 ];
