@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3f8fc">
+  <script>try{if(localStorage.getItem("mayank-site-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(_){}</script>
   <meta name="description" content="Mayank Dhalani | medicine, poetry, art, and notes under a quiet sky.">
   <title>Mayank Dhalani | Notes Under a Quiet Sky</title>
   <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
@@ -31,10 +32,11 @@
     @media(max-width:860px){.container{width:min(100% - 54px,720px)}.hero{grid-template-columns:1fr;gap:28px;padding-top:74px}.hero-art{height:350px}.section-head,.essay-box{grid-template-columns:1fr;gap:22px}.cards{grid-template-columns:1fr}.essay-note{justify-self:start}.signoff{padding-bottom:60px}}
     @media(max-width:620px){.container{width:calc(100% - 38px)}.nav{min-height:74px}.brand{font-size:21px}.brand img{width:30px;height:30px}.navlinks{gap:14px}.navlinks a{font-size:11px}.hero h1{font-size:clamp(50px,12vw,68px)}.note-card{left:2%;width:92%}.hero-art{height:330px}.about{padding:72px 0}.essay-box{padding:28px}.signoff{flex-wrap:wrap}.star{font-size:48px}}
   </style>
+  <link rel="stylesheet" href="theme.css?v=1">
 </head>
-<body>
+<body class="page-home">
   <div class="sky" aria-hidden="true"></div>
-  <header><nav class="container nav"><a class="brand" href="./"><img src="favicon.svg?v=3" alt=""><span>Mayank</span> Dhalani</a><div class="navlinks"><a href="#about">About</a><a href="#essays">Essays</a><a class="pill" href="poetry/">Poetry ↗</a></div></nav></header>
+  <header><nav class="container nav"><a class="brand" href="./"><img src="favicon.svg?v=3" alt=""><span>Mayank</span> Dhalani</a><div class="navlinks"><a href="#about">About</a><a href="#essays">Essays</a><a class="pill" href="poetry/">Poetry ↗</a><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span data-theme-label>Dark mode</span></button></div></nav></header>
   <main>
     <section class="hero container">
       <div>
@@ -63,4 +65,5 @@
   </main>
   <footer><div class="container footer-inner"><p>© <span id="year"></span> Mayank Dhalani</p><a href="poetry/">Open the poetry page ↗</a></div></footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script src="theme.js?v=1"></script>
 </body></html>
