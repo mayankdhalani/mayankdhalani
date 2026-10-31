@@ -48,14 +48,9 @@
     document.getElementById('year').textContent=new Date().getFullYear();
     const list=document.getElementById('list'), count=document.getElementById('count'), search=document.getElementById('search');
     function fmtDate(d){const x=new Date(d+'T12:00:00');return x.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}
-    function teaser(p){const first=(p.content||'').split(/
-
-+/)[0].replace(/
-/g,' ').trim();return first.length>165?first.slice(0,162)+'…':first}
+    function teaser(p){const first=(p.content||'').split(/\n\n+/)[0].replace(/\n/g,' ').trim();return first.length>165?first.slice(0,162)+'…':first}
     function render(){const q=search.value.trim().toLowerCase();const found=posts.filter(p=>(p.title+' '+(p.content||'')).toLowerCase().includes(q));count.textContent=(q?found.length+' matching':posts.length+' collected')+(found.length===1?' piece':' pieces');list.innerHTML='';if(!found.length){list.innerHTML='<div style="padding:50px 0;color:#cad1d8">No poem found for that search.</div>';return;}found.forEach((p,i)=>{const item=document.createElement('article');item.className='item';item.innerHTML=`<div class="num micro">${String(i+1).padStart(2,'0')}</div><div><p class="date micro">${fmtDate(p.date)}</p><h3><a href="?poem=${encodeURIComponent(p.slug)}">${p.title}</a></h3><p class="excerpt">${teaser(p)}</p></div><a class="read" href="?poem=${encodeURIComponent(p.slug)}">Read poem ↗</a>`;list.appendChild(item);})}
-    function poemToHTML(text){const blocks=String(text||'').trim().split(/
-
-+/);return blocks.map(b=>'<p>'+b.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</p>').join('')}
+    function poemToHTML(text){const blocks=String(text||'').trim().split(/\n\n+/);return blocks.map(b=>'<p>'+b.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</p>').join('')}
     function showReader(post){document.getElementById('archivePage').hidden=true;document.getElementById('reader').hidden=false;document.getElementById('rdate').textContent=fmtDate(post.date);document.getElementById('rtitle').textContent=post.title;document.getElementById('rbody').innerHTML=poemToHTML(post.content);document.getElementById('roriginal').href=post.original;const fig=document.getElementById('rart');if(post.image){fig.hidden=false;document.getElementById('rimg').src=post.image;document.getElementById('rcaption').textContent=post.caption||'';}else{fig.hidden=true;document.getElementById('rimg').removeAttribute('src');document.getElementById('rcaption').textContent='';}document.title=post.title+' — '+baseTitle;window.scrollTo(0,0)}
     function showArchive(){document.getElementById('archivePage').hidden=false;document.getElementById('reader').hidden=true;document.title=baseTitle;window.scrollTo(0,0)}
     function route(){const slug=new URL(location.href).searchParams.get('poem');if(!slug){showArchive();return;}const post=posts.find(p=>p.slug===slug);if(post)showReader(post);else showArchive();}
