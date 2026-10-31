@@ -40,7 +40,7 @@
     body.reading-mode .art { background:#ffffff; border-color:#dce8f1; }
     body.reading-mode .art img { background:#ffffff; }
   </style>
-  <link rel="stylesheet" href="../theme.css?v=1">
+  <link rel="stylesheet" href="../theme.css?v=2">
 </head>
 <body class="page-poetry">
   <div class="bg" aria-hidden="true"></div><div class="swirl" aria-hidden="true"></div><div class="stars" aria-hidden="true"></div>
@@ -102,6 +102,7 @@
     }
 
     function showReader(post){document.body.classList.add('reading-mode');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content','#fbfdff');
       const idx=posts.findIndex(p=>p.slug===post.slug);
       const prev=idx>0 ? posts[idx-1] : null;
       const next=idx<posts.length-1 ? posts[idx+1] : null;
@@ -138,6 +139,7 @@
     }
 
     function showArchive(){document.body.classList.remove('reading-mode');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content','#09172d');
       document.getElementById('archivePage').hidden=false;
       document.getElementById('reader').hidden=true;
       document.title=baseTitle;
